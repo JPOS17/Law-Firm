@@ -1,0 +1,27 @@
+.hero {
+  padding-block: var(--space-16);
+  background: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+.hero__title {
+  max-width: 20ch;
+  color: var(--color-white);
+}
+
+.hero__lead {
+  max-width: 60ch;
+  margin-top: var(--space-4);
+  color: var(--color-gray-200);
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-navy-900);
+  font-weight: 600;
+  text-decoration: none;
+}
