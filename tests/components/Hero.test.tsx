@@ -6,7 +6,7 @@ const props = {
   title: 'Your Firm Name',
   lead: 'A short statement about the firm.',
   ctaLabel: 'Schedule a consultation',
-  ctaHref: '#test',
+  ctaHref: '#contact',
 }
 
 describe('Hero', () => {
