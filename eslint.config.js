@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import prettier from 'eslint-config-prettier/flat'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import jsxA11yX from 'eslint-plugin-jsx-a11y-x'
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -15,6 +16,7 @@ export default defineConfig([
       tseslint.configs.recommendedTypeChecked,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
+      jsxA11yX.configs.recommended,
       prettier,
     ],
     languageOptions: {
