@@ -1,15 +1,14 @@
-# Project Name
+# Law Firm website
 
-One or two sentences about what this project is.
-
-> Built from the Vite + React + TypeScript starter. To start a new project from it, see [Using this as a template](#using-this-as-a-template).
+Interactive website to display information for a Law Firm in Aguascalientes, Mexico
 
 ## Tech stack
 
 - **React** and **TypeScript**, built with **Vite**
 - **React Router** for pages and URLs
 - **Vitest** and **React Testing Library** for tests
-- **ESLint** (type-aware, with accessibility rules from `eslint-plugin-jsx-a11y-x`) and **Prettier** for code quality and formatting- **Husky** and **lint-staged** for automatic checks on commit and push
+- **ESLint** (type-aware, with accessibility rules from `eslint-plugin-jsx-a11y-x`) and **Prettier** for code quality and formatting
+- **Husky** and **lint-staged** for automatic checks on commit and push
 - **GitHub Actions** for automatic checks on every push and pull request
 
 ## Getting started
@@ -22,8 +21,8 @@ One or two sentences about what this project is.
 ### Setup
 
 ```bash
-git clone git@github.com:<your-username>/<repo-name>.git
-cd <repo-name>
+git clone git@github.com:JPOS17/Law-Firm.git
+cd Law-Firm
 nvm use
 npm install
 npm run dev
@@ -125,17 +124,6 @@ Test files live in `tests/`, mirroring `src/` (the test for `src/components/Hero
 ### Commit messages
 
 Use a short prefix that says what kind of change it is: `feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`, or `ci:`. This isn't enforced, but it keeps the history easy to scan.
-
-## Using this as a template
-
-After creating a repo from the template with **Use this template** on GitHub:
-
-1. Clone it and run `npm install`.
-2. In `package.json`, change `"name"`.
-3. In `index.html`, change the `<title>` and add a meta description.
-4. Replace the placeholder content in `src/pages/HomePage.tsx`. If you change the text, update the matching test in `tests/components/Hero.test.tsx`.
-5. Adjust the colors and fonts in `src/styles/tokens.css`.
-6. Rewrite the top of this README, and delete this section.
 
 ## Not set up yet
 
