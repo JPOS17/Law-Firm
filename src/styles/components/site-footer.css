@@ -1,0 +1,5 @@
+.site-footer {
+  padding-block: var(--space-8);
+  background: var(--color-primary-900);
+  color: var(--color-neutral-200);
+}

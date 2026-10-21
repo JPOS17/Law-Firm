@@ -4,4 +4,8 @@
 @import './reset.css' layer(reset);
 @import './base.css' layer(base);
 @import './layout.css' layer(layout);
+
 @import './components/hero.css' layer(components);
+@import './components/skip-link.css' layer(components);
+@import './components/site-header.css' layer(components);
+@import './components/site-footer.css' layer(components);

@@ -1,19 +1,27 @@
+import { Link } from 'react-router'
+
 type HeroProps = {
   title: string
   lead: string
-  ctaLabel: string
-  ctaHref: string
+  cta?: {
+    label: string
+    to: string
+  }
+  image?: string
 }
 
-export function Hero({ title, lead, ctaLabel, ctaHref }: HeroProps) {
+export function Hero({ title, lead, cta, image }: HeroProps) {
   return (
     <section className="hero">
-      <div className="container">
+      {image && <img className="hero__image" src={image} alt="" fetchPriority="high" />}
+      <div className="container hero__content">
         <h1 className="hero__title">{title}</h1>
         <p className="hero__lead">{lead}</p>
-        <a className="hero__cta" href={ctaHref}>
-          {ctaLabel}
-        </a>
+        {cta && (
+          <Link className="hero__cta" to={cta.to}>
+            {cta.label}
+          </Link>
+        )}
       </div>
     </section>
   )

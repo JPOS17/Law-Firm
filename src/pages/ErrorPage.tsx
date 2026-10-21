@@ -1,11 +1,15 @@
+import { site } from '@/content/site'
 import { Link } from 'react-router'
 
 export function ErrorPage() {
   return (
-    <main className="container section">
-      <h1>Something went wrong</h1>
-      <p>An unexpected error occurred. Please try again, or return to the home page.</p>
-      <Link to="/">Back to home</Link>
-    </main>
+    <>
+      <title>{`Error | ${site.name}`}</title>
+      <main className="container section">
+        <h1>Ocurrió un error inesperado</h1>
+        <p>Por favor, inténtelo de nuevo, o regrese a la página de inicio.</p>
+        <Link to="/">Volver al inicio</Link>
+      </main>
+    </>
   )
 }

@@ -11,7 +11,7 @@ h3,
 h4 {
   font-family: var(--font-heading);
   line-height: 1.2;
-  color: var(--color-navy-900);
+  color: var(--color-primary-900);
 }
 
 h1 {
