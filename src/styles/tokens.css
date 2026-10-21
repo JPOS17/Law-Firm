@@ -1,22 +1,28 @@
 :root {
   /* Palette */
-  --color-navy-900: #0f1b2d;
-  --color-navy-700: #1d3557;
-  --color-gold-500: #b08d57;
-  --color-gray-900: #1a1a1a;
-  --color-gray-600: #5b6470;
-  --color-gray-200: #e5e7eb;
-  --color-gray-50: #f8f9fa;
+
+  /* Primary: the brand color. Headings, links, buttons, and key interface elements. */
+  --color-primary-900: #0f1b2d; /* darkest: dark backgrounds (hero, footer), headings */
+  --color-primary-700: #1d3557; /* standard brand shade: links, buttons, focus outlines */
+
+  /* Accent: a highlight used sparingly. Never for body text (too little contrast on white). */
+  --color-accent-500: #b08d57; /* underlines, borders, and button backgrounds with dark text */
+
+  /* Neutral: everything that isn't brand: text, borders, and backgrounds. */
+  --color-neutral-900: #1a1a1a; /* body text */
+  --color-neutral-600: #5b6470; /* secondary text: captions, hints */
+  --color-neutral-200: #e5e7eb; /* borders and dividers; light text on dark backgrounds */
+  --color-neutral-50: #f8f9fa; /* alternate section backgrounds */
   --color-white: #ffffff;
 
-  /* Semantic colors: use these in components, not the palette above */
-  --color-text: var(--color-gray-900);
-  --color-text-muted: var(--color-gray-600);
+  /* ---- Semantic colors: say what a color is FOR. Use these in components. ---- */
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
   --color-bg: var(--color-white);
-  --color-bg-alt: var(--color-gray-50);
-  --color-border: var(--color-gray-200);
-  --color-primary: var(--color-navy-700);
-  --color-accent: var(--color-gold-500);
+  --color-bg-alt: var(--color-neutral-50);
+  --color-border: var(--color-neutral-200);
+  --color-primary: var(--color-primary-700);
+  --color-accent: var(--color-accent-500);
 
   /* Typography */
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
