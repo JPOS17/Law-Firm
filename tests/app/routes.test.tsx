@@ -35,9 +35,7 @@ describe('routes', () => {
   it('renders the home page at the root path', async () => {
     renderAt('/')
 
-    expect(
-      await screen.findByRole('heading', { level: 1, name: 'Despacho de Abogados' }),
-    ).toBeVisible()
+    expect(await screen.findByRole('heading', { level: 1, name: site.name })).toBeVisible()
   })
 
   // The "/la-firma" route should show the firm page with its own heading.
