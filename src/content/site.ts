@@ -17,6 +17,11 @@ export const site = {
     { label: 'La Firma', to: '/la-firma' },
     { label: 'Servicios', to: '/servicios' },
     { label: 'Equipo', to: '/equipo' },
+    { label: 'Blog', to: '/blog' },
     { label: 'Contacto', to: '/contacto' },
+  ] satisfies NavItem[],
+  footerNav: [
+    { label: 'Enlaces de interés', to: '/enlaces' },
+    { label: 'Aviso de privacidad', to: '/aviso-de-privacidad' },
   ] satisfies NavItem[],
 }
