@@ -1,0 +1,16 @@
+.link-list {
+  display: grid;
+  gap: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.link-list__link {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.link-list__description {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}

@@ -27,3 +27,7 @@
 #root > main {
   flex: 1;
 }
+
+.flow > * + * {
+  margin-top: var(--space-4);
+}

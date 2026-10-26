@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { site } from '@/content/site'
 
 export function SiteFooter() {
@@ -17,6 +18,17 @@ export function SiteFooter() {
           <br />
           {address.postalCode} {address.city}
         </address>
+        <nav aria-label="Pie de página">
+          <ul className="site-footer__list">
+            {site.footerNav.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="site-footer__link">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
       <div className="container site-footer__legal">
         <p>
