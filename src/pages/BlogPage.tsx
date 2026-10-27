@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { Hero } from '@/components/Hero'
-import courthouseImage from '@/assets/courthouse.jpg'
+import officeImage from '@/assets/office.webp'
 import { posts } from '@/content/posts'
 import { site } from '@/content/site'
 import { formatDate } from '@/lib/format'
@@ -12,7 +12,7 @@ export function BlogPage() {
       <Hero
         title="Blog"
         lead="Texto de marcador de posición para una breve descripción del blog."
-        image={courthouseImage}
+        image={officeImage}
       />
       <section className="container section">
         <ul className="post-list">

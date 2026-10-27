@@ -1,5 +1,5 @@
 import { Hero } from '@/components/Hero'
-import courthouseImage from '@/assets/courthouse.jpg'
+import officeImage from '@/assets/office.webp'
 import { legalLinks } from '@/content/links'
 import { site } from '@/content/site'
 
@@ -10,7 +10,7 @@ export function LinksPage() {
       <Hero
         title="Enlaces de interés"
         lead="Texto de marcador de posición para una breve descripción de esta sección."
-        image={courthouseImage}
+        image={officeImage}
       />
       <section className="container section">
         <ul className="link-list">
