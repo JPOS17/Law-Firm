@@ -15,3 +15,5 @@
 @import './components/card.css' layer(components);
 @import './components/attorney.css' layer(components);
 @import './components/cta-band.css' layer(components);
+@import './components/form.css' layer(components);
+@import './components/contact.css' layer(components);
