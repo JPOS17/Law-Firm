@@ -1,20 +1,12 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { createMemoryRouter } from 'react-router'
-import { RouterProvider } from 'react-router/dom'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { routes } from '@/app/routes'
 import { legalLinks } from '@/content/links'
 import { posts } from '@/content/posts'
 import { site } from '@/content/site'
+import { renderAt } from '../renderAt'
 
 // The heading shown by NotFoundPage. Update this if page title changes.
 const NOT_FOUND_HEADING = 'Página no encontrada'
-
-// Renders the whole app with the real routes, as if the browser were at `path`.
-function renderAt(path: string) {
-  const router = createMemoryRouter(routes, { initialEntries: [path] })
-  render(<RouterProvider router={router} />)
-}
 
 describe('routes', () => {
   // Runs once per item in site.nav. Every link in the header must lead to a real

@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: color-mix(in srgb, var(--color-primary-900) 70%, transparent);
+  background: color-mix(in srgb, var(--color-primary-900) 40%, transparent);
 }
 
 .hero__image {

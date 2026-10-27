@@ -11,3 +11,7 @@
 @import './components/site-footer.css' layer(components);
 @import './components/blog.css' layer(components);
 @import './components/links.css' layer(components);
+@import './components/section.css' layer(components);
+@import './components/card.css' layer(components);
+@import './components/attorney.css' layer(components);
+@import './components/cta-band.css' layer(components);

@@ -1,6 +1,6 @@
 import { site } from '@/content/site'
 import { Hero } from '@/components/Hero'
-import courthouseImage from '@/assets/courthouse.jpg'
+import officeImage from '@/assets/office.webp'
 
 export function ContactPage() {
   return (
@@ -9,7 +9,7 @@ export function ContactPage() {
       <Hero
         title="Contáctenos"
         lead="Texto de marcador de posición para una breve descripción de lo que hace la firma."
-        image={courthouseImage}
+        image={officeImage}
       />
     </>
   )
