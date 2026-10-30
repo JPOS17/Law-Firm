@@ -1,17 +1,21 @@
 body {
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-text);
-  background: var(--color-bg);
+  line-height: 1.65;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
   color: var(--color-primary-900);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 h1 {
@@ -26,14 +30,23 @@ h3 {
   font-size: var(--text-xl);
 }
 
+p {
+  text-wrap: pretty;
+}
+
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-700);
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
 
+a:hover {
+  color: var(--color-accent-700);
+}
+
 :focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: 3px solid var(--color-accent-700);
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

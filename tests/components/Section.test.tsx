@@ -33,20 +33,37 @@ describe('Section', () => {
     expect(screen.getByText('Texto de introducción')).toBeVisible()
   })
 
-  // The "alt" tone adds the modifier class that the stylesheet uses for the tinted background.
-  it('adds the alternate background class only for the alt tone', () => {
+  // The small line above the title is optional too.
+  it('shows the eyebrow only when one is provided', () => {
     const { rerender } = render(
       <Section title="Mi sección">
         <p>contenido</p>
       </Section>,
     )
-    expect(screen.getByRole('region')).not.toHaveClass('section--alt')
+    expect(screen.queryByText('Antetítulo')).not.toBeInTheDocument()
 
     rerender(
-      <Section title="Mi sección" tone="alt">
+      <Section title="Mi sección" eyebrow="Antetítulo">
         <p>contenido</p>
       </Section>,
     )
-    expect(screen.getByRole('region')).toHaveClass('section--alt')
+    expect(screen.getByText('Antetítulo')).toBeVisible()
+  })
+
+  // Each tone adds the modifier class that the stylesheet uses for the background.
+  it.each(['alt', 'dark'] as const)('adds the %s modifier class only for that tone', (tone) => {
+    const { rerender } = render(
+      <Section title="Mi sección">
+        <p>contenido</p>
+      </Section>,
+    )
+    expect(screen.getByRole('region')).not.toHaveClass(`section--${tone}`)
+
+    rerender(
+      <Section title="Mi sección" tone={tone}>
+        <p>contenido</p>
+      </Section>,
+    )
+    expect(screen.getByRole('region')).toHaveClass(`section--${tone}`)
   })
 })

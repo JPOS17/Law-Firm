@@ -10,18 +10,6 @@
 
 .form__submit {
   justify-self: start;
-  padding: var(--space-3) var(--space-8);
-  border: 0;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.form__submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .form-field {
@@ -38,7 +26,7 @@
   padding: var(--space-3);
   border: 1px solid var(--color-neutral-600);
   border-radius: var(--radius-sm);
-  background: var(--color-bg);
+  background: var(--color-surface);
   color: var(--color-text);
 }
 
@@ -61,7 +49,7 @@
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .form-message {
@@ -71,7 +59,7 @@
 }
 
 .form-message--success {
-  color: var(--color-primary);
+  color: var(--color-primary-700);
 }
 
 .form-message--error {

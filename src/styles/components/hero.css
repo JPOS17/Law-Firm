@@ -2,22 +2,29 @@
   position: relative;
   isolation: isolate;
   display: grid;
-  place-items: center;
-  min-height: 28rem;
+  align-items: center;
+  min-height: 20rem;
   overflow: hidden;
   padding-block: var(--space-16);
   background: var(--color-primary-900);
   color: var(--color-white);
-  text-align: center;
 }
 
-/* Tinted overlay so the text stays readable on any photo */
+.hero--large {
+  min-height: min(40rem, 80vh);
+}
+
+/* Dark tint, strongest on the left where the text sits, so it stays readable on any photo */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: color-mix(in srgb, var(--color-primary-900) 40%, transparent);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-primary-900) 94%, transparent),
+    color-mix(in srgb, var(--color-primary-900) 62%, transparent)
+  );
 }
 
 .hero__image {
@@ -35,24 +42,27 @@
 }
 
 .hero__title {
-  max-width: 20ch;
-  margin-inline: auto;
+  max-width: 18ch;
+  margin-top: var(--space-3);
   color: var(--color-white);
 }
 
+.hero--large .hero__title {
+  max-width: 16ch;
+  font-size: var(--text-hero);
+}
+
 .hero__lead {
-  max-width: 60ch;
-  margin: var(--space-4) auto 0;
+  max-width: 52ch;
+  margin-top: var(--space-4);
   color: var(--color-neutral-200);
+  font-size: var(--text-lg);
 }
 
 .hero__cta {
-  display: inline-block;
-  margin-top: var(--space-6);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-sm);
-  background: var(--color-accent);
-  color: var(--color-primary-900);
-  font-weight: 600;
-  text-decoration: none;
+  margin-top: var(--space-8);
+}
+
+.hero :focus-visible {
+  outline-color: var(--color-accent-300);
 }

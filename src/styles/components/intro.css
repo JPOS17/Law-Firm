@@ -1,0 +1,16 @@
+.intro__text {
+  max-width: 52rem;
+  padding-left: var(--space-6);
+  border-left: 3px solid var(--color-accent-500);
+  color: var(--color-primary-900);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  line-height: 1.5;
+}
+
+@media (min-width: 48rem) {
+  .intro__text {
+    font-size: var(--text-2xl);
+    line-height: 1.4;
+  }
+}

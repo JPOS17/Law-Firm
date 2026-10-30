@@ -1,40 +1,58 @@
 :root {
-  /* Palette */
+  /* Palette: named by role, so a rebrand only changes the values here */
 
-  /* Primary: the brand color. Headings, links, buttons, and key interface elements. */
-  --color-primary-900: #0f1b2d; /* darkest: dark backgrounds (hero, footer), headings */
-  --color-primary-700: #1d3557; /* standard brand shade: links, buttons, focus outlines */
+  /* Forest */
+  /* --color-primary-900: #2b3326;
+  --color-primary-700: #4a5a3c;
+  --color-primary-200: #cfd8c2; */
 
-  /* Accent: a highlight used sparingly. Never for body text (too little contrast on white). */
-  --color-accent-500: #b08d57; /* underlines, borders, and button backgrounds with dark text */
+  /* Expresso */
+  --color-primary-900: #2f2420;
+  --color-primary-700: #6b4a35;
+  --color-primary-200: #e0d2c3;
 
-  /* Neutral: everything that isn't brand: text, borders, and backgrounds. */
-  --color-neutral-900: #1a1a1a; /* body text */
-  --color-neutral-600: #5b6470; /* secondary text: captions, hints */
-  --color-neutral-200: #e5e7eb; /* borders and dividers; light text on dark backgrounds */
-  --color-neutral-50: #f8f9fa; /* alternate section backgrounds */
+  /* Ink Navy */
+  /* --color-primary-900: #1c2a3d;
+  --color-primary-700: #2f4a6b;
+  --color-primary-200: #cdd7e3; */
+
+  /* OxBlood */
+  /* --color-primary-900: #3d1a1f;
+  --color-primary-700: #7a2e38;
+  --color-primary-200: #e6cfd2; */
+
+  --color-accent-700: #80602f;
+  --color-accent-500: #b08d57;
+  --color-accent-300: #dcc391;
+  --color-neutral-900: #2a2019;
+  --color-neutral-600: #6b5e51;
+  --color-neutral-300: #d3c6ac;
+  --color-neutral-200: #e3d9c6;
+  --color-neutral-100: #eee6d4;
+  --color-neutral-50: #f7f2e8;
   --color-white: #ffffff;
+  --color-error: #a3261a;
 
-  --color-error: #b42318;
-
-  /* ---- Semantic colors: say what a color is FOR. Use these in components. ---- */
+  /* Semantic colors: use these in components when one fits */
   --color-text: var(--color-neutral-900);
   --color-text-muted: var(--color-neutral-600);
-  --color-bg: var(--color-white);
-  --color-bg-alt: var(--color-neutral-50);
-  --color-border: var(--color-neutral-200);
+  --color-bg: var(--color-neutral-50);
+  --color-bg-alt: var(--color-neutral-100);
+  --color-surface: var(--color-white);
+  --color-border: var(--color-neutral-300);
   --color-primary: var(--color-primary-700);
   --color-accent: var(--color-accent-500);
 
   /* Typography */
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: Georgia, 'Times New Roman', serif;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
+  --font-body: 'Source Sans 3 Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
-  --text-2xl: clamp(1.75rem, 1.2rem + 2vw, 2.25rem);
-  --text-3xl: clamp(2rem, 1.3rem + 3vw, 3rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);
+  --text-hero: clamp(2.5rem, 1.5rem + 4.2vw, 4.5rem);
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -45,8 +63,9 @@
   --space-8: 2rem;
   --space-12: 3rem;
   --space-16: 4rem;
+  --space-section: clamp(3.5rem, 2rem + 5vw, 6rem);
 
   /* Misc */
-  --radius-sm: 0.25rem;
+  --radius-sm: 2px;
   --container-max: 72rem;
 }

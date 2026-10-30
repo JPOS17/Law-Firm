@@ -1,15 +1,12 @@
 .post-list {
-  display: grid;
-  gap: var(--space-6);
   padding: 0;
+  border-top: 1px solid var(--color-border);
   list-style: none;
 }
 
 .post-card {
-  padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-bg-alt);
+  padding-block: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .post-card__title {
@@ -22,8 +19,7 @@
 }
 
 .post-card__link:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: var(--color-accent-700);
 }
 
 .post-card__date,
@@ -35,6 +31,7 @@
 }
 
 .post-card__excerpt {
+  max-width: 60ch;
   margin-top: var(--space-3);
 }
 
@@ -43,7 +40,7 @@
 }
 
 .post__body {
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
 }
 
 .post__body p + p {
@@ -52,5 +49,5 @@
 
 .post__back {
   display: inline-block;
-  margin-top: var(--space-8);
+  margin-top: var(--space-12);
 }

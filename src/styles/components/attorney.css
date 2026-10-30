@@ -1,7 +1,7 @@
 .attorney-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-12) var(--space-8);
   padding: 0;
   list-style: none;
 }
@@ -17,21 +17,25 @@
   display: grid;
   place-items: center;
   background: var(--color-neutral-200);
-  color: var(--color-neutral-600);
+  color: var(--color-accent-700);
   font-family: var(--font-heading);
-  font-size: var(--text-3xl);
+  font-size: var(--text-hero);
 }
 
 .attorney__name {
   margin-top: var(--space-4);
-  font-size: var(--text-lg);
 }
 
 .attorney__role {
-  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  color: var(--color-accent-700);
   font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .attorney__bio {
   margin-top: var(--space-3);
+  color: var(--color-text-muted);
 }

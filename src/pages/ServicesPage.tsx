@@ -1,5 +1,5 @@
 import { CallToAction } from '@/components/CallToAction'
-import { CardGrid } from '@/components/CardGrid'
+import { DetailList } from '@/components/DetailList'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
@@ -19,7 +19,13 @@ export function ServicesPage() {
         title="Áreas de práctica"
         intro="Texto de marcador de posición para introducir las áreas de práctica del despacho."
       >
-        <CardGrid items={services} />
+        <DetailList
+          items={services.map((service) => ({
+            id: service.slug,
+            title: service.title,
+            description: service.description,
+          }))}
+        />
       </Section>
       <CallToAction
         title="¿Tiene un asunto legal que atender?"

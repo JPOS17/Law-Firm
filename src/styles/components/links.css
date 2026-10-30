@@ -1,12 +1,17 @@
 .link-list {
-  display: grid;
-  gap: var(--space-6);
   padding: 0;
+  border-top: 1px solid var(--color-border);
   list-style: none;
 }
 
+.link-list > li {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .link-list__link {
-  font-size: var(--text-lg);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
   font-weight: 600;
 }
 

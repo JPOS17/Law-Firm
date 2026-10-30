@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router'
+import { createMemoryRouter } from 'react-router'
+import { RouterProvider } from 'react-router/dom'
 import { describe, expect, it } from 'vitest'
 import { RootLayout } from '@/app/RootLayout'
 
+// The layout restores the scroll position, which only works inside a "data router",
+// so it is rendered with the same kind of router the real app uses.
 function renderLayout() {
-  render(
-    <MemoryRouter>
-      <RootLayout />
-    </MemoryRouter>,
-  )
+  const router = createMemoryRouter([{ path: '/', element: <RootLayout /> }])
+  render(<RouterProvider router={router} />)
 }
 
 describe('RootLayout', () => {

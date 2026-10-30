@@ -1,27 +1,17 @@
 .cta-band {
-  padding-block: var(--space-12);
-  background: var(--color-primary-700);
-  color: var(--color-white);
+  padding-block: var(--space-section);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
   text-align: center;
-}
-
-.cta-band__title {
-  color: var(--color-white);
 }
 
 .cta-band__text {
   max-width: 50ch;
   margin: var(--space-3) auto 0;
-  color: var(--color-neutral-200);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
 }
 
-.cta-band__link {
-  display: inline-block;
-  margin-top: var(--space-6);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-sm);
-  background: var(--color-accent);
-  color: var(--color-primary-900);
-  font-weight: 600;
-  text-decoration: none;
+.cta-band .button {
+  margin-top: var(--space-8);
 }
