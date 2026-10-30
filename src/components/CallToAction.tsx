@@ -15,7 +15,7 @@ export function CallToAction({ title, text, cta }: CallToActionProps) {
       <div className="container">
         <h2 className="cta-band__title">{title}</h2>
         <p className="cta-band__text">{text}</p>
-        <Link className="cta-band__link" to={cta.to}>
+        <Link className="button" to={cta.to}>
           {cta.label}
         </Link>
       </div>

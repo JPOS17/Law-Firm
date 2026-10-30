@@ -1,0 +1,26 @@
+.detail-list {
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+}
+
+.detail-list__item {
+  display: grid;
+  gap: var(--space-2) var(--space-12);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detail-list__title {
+  scroll-margin-top: var(--space-8);
+}
+
+.detail-list__description {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 48rem) {
+  .detail-list__item {
+    grid-template-columns: 2fr 3fr;
+  }
+}

@@ -36,6 +36,32 @@ describe('Hero', () => {
     expect(screen.queryByRole('link')).not.toBeInTheDocument()
   })
 
+  // The small line above the title is optional too.
+  it('shows the eyebrow only when one is provided', () => {
+    const { rerender } = renderHero(<Hero {...props} />)
+    expect(screen.queryByText('eyebrow')).not.toBeInTheDocument()
+
+    rerender(
+      <MemoryRouter>
+        <Hero {...props} eyebrow="eyebrow" />
+      </MemoryRouter>,
+    )
+    expect(screen.getByText('eyebrow')).toBeVisible()
+  })
+
+  // Inner pages use the short banner. The home page asks for the tall one.
+  it('uses the compact banner unless the large size is requested', () => {
+    const { container, rerender } = renderHero(<Hero {...props} />)
+    expect(container.querySelector('.hero')).not.toHaveClass('hero--large')
+
+    rerender(
+      <MemoryRouter>
+        <Hero {...props} size="large" />
+      </MemoryRouter>,
+    )
+    expect(container.querySelector('.hero')).toHaveClass('hero--large')
+  })
+
   // When an image is passed, it should render as a decorative <img> (empty alt),
   // so screen readers skip it and only read the text on top.
   it('renders a decorative background image when one is provided', () => {

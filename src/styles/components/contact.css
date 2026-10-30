@@ -11,12 +11,16 @@
 
 .contact-details__list {
   display: grid;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
 }
 
 .contact-details__term {
+  color: var(--color-accent-700);
+  font-size: var(--text-sm);
   font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .contact-details__value {

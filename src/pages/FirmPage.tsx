@@ -1,5 +1,5 @@
 import { CallToAction } from '@/components/CallToAction'
-import { CardGrid } from '@/components/CardGrid'
+import { DetailList } from '@/components/DetailList'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
@@ -32,7 +32,7 @@ export function FirmPage() {
         tone="alt"
         intro="Texto de marcador de posición para introducir los valores que distinguen al despacho."
       >
-        <CardGrid items={values} />
+        <DetailList items={values} />
       </Section>
       <CallToAction
         title="¿Desea conocernos mejor?"
