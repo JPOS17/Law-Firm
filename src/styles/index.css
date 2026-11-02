@@ -21,3 +21,5 @@
 @import './components/links.css' layer(components);
 @import './components/form.css' layer(components);
 @import './components/contact.css' layer(components);
+@import './components/pillars.css' layer(components);
+@import './components/accordion.css' layer(components);

@@ -3,6 +3,7 @@ import { site } from '@/content/site'
 export function LocationMap() {
   return (
     <div className="location-map">
+      <h3 className="location-map__title">Cómo llegar</h3>
       <iframe
         className="location-map__frame"
         title="Mapa con la ubicación del despacho"

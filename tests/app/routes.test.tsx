@@ -1,7 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { home } from '@/content/home'
-import { legalLinks } from '@/content/links'
 import { posts } from '@/content/posts'
 import { site } from '@/content/site'
 import { renderAt } from '../renderAt'
@@ -89,7 +88,7 @@ describe('routes', () => {
     ['/equipo', 'Nuestro Equipo'],
     ['/blog', 'Blog'],
     ['/contacto', 'Contáctenos'],
-    ['/enlaces', 'Enlaces de interés'],
+    ['/terminos-y-condiciones', 'Términos y condiciones'],
     ['/aviso-de-privacidad', 'Aviso de privacidad'],
     ['/does-not-exist', 'Página no encontrada'],
   ])('sets the tab title at %s', async (path, pageTitle) => {
@@ -123,23 +122,5 @@ describe('blog routes', () => {
     renderAt('/blog/no-existe')
 
     expect(await screen.findByRole('heading', { level: 1, name: NOT_FOUND_HEADING })).toBeVisible()
-  })
-})
-
-describe('links of interest route', () => {
-  // Every external link should point to its site and open in a new tab safely.
-  // The link's accessible name also includes a hidden "opens in a new tab" note,
-  // so match on the start of the name.
-  it('lists every external link and opens it in a new tab', async () => {
-    renderAt('/enlaces')
-
-    for (const item of legalLinks) {
-      const link = await screen.findByRole('link', {
-        name: (accessibleName) => accessibleName.startsWith(item.name),
-      })
-      expect(link).toHaveAttribute('href', item.url)
-      expect(link).toHaveAttribute('target', '_blank')
-      expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'))
-    }
   })
 })

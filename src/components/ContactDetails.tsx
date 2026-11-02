@@ -11,11 +11,14 @@ export function ContactDetails() {
         <div>
           <dt className="contact-details__term">Dirección</dt>
           <dd className="contact-details__value">
-            {address.street}
-            <br />
-            {address.area}
-            <br />
-            {address.postalCode} {address.city}
+            <a href={site.map.linkUrl} target="_blank" rel="noopener noreferrer">
+              {address.street}
+              <br />
+              {address.area}
+              <br />
+              {address.postalCode} {address.city}
+              <span className="visually-hidden"> (abre Google Maps en una pestaña nueva)</span>
+            </a>
           </dd>
         </div>
         <div>

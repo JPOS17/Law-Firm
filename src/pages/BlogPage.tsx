@@ -27,6 +27,10 @@ export function BlogPage() {
                 {formatDate(post.date)}
               </time>
               <p className="post-card__excerpt">{post.excerpt}</p>
+              {/* A visual cue only: the title link already says where this goes */}
+              <span className="post-card__more" aria-hidden="true">
+                Leer artículo
+              </span>
             </li>
           ))}
         </ul>

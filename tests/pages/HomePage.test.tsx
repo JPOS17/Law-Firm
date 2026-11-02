@@ -41,7 +41,7 @@ describe('HomePage', () => {
   it('takes the visitor to the matching area on the services page', async () => {
     const scrollIntoView = vi.spyOn(Element.prototype, 'scrollIntoView')
     renderAt('/')
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
 
     const first = services[0]
     expect(first).toBeDefined()
@@ -49,6 +49,10 @@ describe('HomePage', () => {
 
     const heading = await screen.findByRole('heading', { level: 3, name: first?.title })
     expect(heading).toHaveAttribute('id', first?.slug)
+    expect(screen.getByRole('button', { name: first?.title })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    )
     await waitFor(() => expect(scrollIntoView).toHaveBeenCalled())
   })
 
