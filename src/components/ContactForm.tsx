@@ -119,7 +119,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <button className="form__submit" type="submit" disabled={status === 'sending'}>
+      <button className="button form__submit" type="submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
       </button>
 

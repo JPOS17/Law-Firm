@@ -1,0 +1,39 @@
+/* A row of short names with a rule above each, like the pillars of a building */
+.pillars__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8) var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.pillars__item {
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-accent-500);
+  color: var(--color-primary-900);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.pillars__summary {
+  max-width: 60ch;
+  margin-top: var(--space-12);
+  font-size: var(--text-lg);
+}
+
+/* On a dark section the pillars switch to light colors */
+.section--dark .pillars__item {
+  border-top-color: var(--color-accent-300);
+  color: var(--color-white);
+}
+
+@media (min-width: 48rem) {
+  .pillars__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pillars__item {
+    font-size: var(--text-xl);
+  }
+}

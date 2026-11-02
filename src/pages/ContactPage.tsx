@@ -21,11 +21,11 @@ export function ContactPage() {
       >
         <div className="contact-layout">
           <ContactForm />
-          <ContactDetails />
+          <div className="contact-aside">
+            <ContactDetails />
+            <LocationMap />
+          </div>
         </div>
-      </Section>
-      <Section title="Cómo llegar" tone="alt">
-        <LocationMap />
       </Section>
     </>
   )

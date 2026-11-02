@@ -20,7 +20,8 @@ export const site = {
   phone: { label: '449 804 0203', href: 'tel:+524498040203' },
   email: 'jjdg@delgadoabogados.com.mx',
   whatsapp: { href: 'https://wa.me/524498040203' },
-  hours: 'Texto de marcador de posición para el horario de atención del despacho.',
+  // TODO(client): confirm the real office hours
+  hours: 'Lunes a viernes, de 9:00 a 17:00 h',
   map: {
     linkUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressLine)}`,
     embedUrl: `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}&output=embed`,
@@ -33,7 +34,7 @@ export const site = {
     { label: 'Contacto', to: '/contacto' },
   ] satisfies NavItem[],
   footerNav: [
-    { label: 'Enlaces de interés', to: '/enlaces' },
+    { label: 'Términos y condiciones', to: '/terminos-y-condiciones' },
     { label: 'Aviso de privacidad', to: '/aviso-de-privacidad' },
   ] satisfies NavItem[],
 }

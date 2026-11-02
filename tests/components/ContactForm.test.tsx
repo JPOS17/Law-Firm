@@ -13,7 +13,7 @@ function renderForm() {
       <ContactForm />
     </MemoryRouter>,
   )
-  return userEvent.setup()
+  return userEvent.setup({ delay: null })
 }
 
 async function fillValidForm(user: UserEvent) {
@@ -117,6 +117,13 @@ describe('ContactForm', () => {
 
     expect(await screen.findByText(/Hemos recibido su mensaje/)).toBeVisible()
     expect(fetchMock).not.toHaveBeenCalled()
+  })
+
+  // The send button uses the site's shared button style, so it doesn't look like a bare browser button.
+  it('styles the send button with the shared button class', () => {
+    renderForm()
+
+    expect(screen.getByRole('button', { name: 'Enviar mensaje' })).toHaveClass('button')
   })
 
   // The consent text links to the privacy notice and opens it in a new tab,

@@ -4,6 +4,13 @@ import { LocationMap } from '@/components/LocationMap'
 import { site } from '@/content/site'
 
 describe('LocationMap', () => {
+  // The map sits under the contact details with its own small heading.
+  it('has a heading above the map', () => {
+    render(<LocationMap />)
+
+    expect(screen.getByRole('heading', { level: 3, name: 'Cómo llegar' })).toBeVisible()
+  })
+
   // The embedded map needs a title so screen reader users know what the frame is.
   it('embeds the map with a descriptive title', () => {
     render(<LocationMap />)

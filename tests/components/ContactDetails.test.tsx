@@ -28,11 +28,20 @@ describe('ContactDetails', () => {
     expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'))
   })
 
-  // The address and the office hours should be shown.
-  it('shows the address and the office hours', () => {
+  // The address is a link that opens the place in Google Maps, in a new tab.
+  it('links the address to Google Maps in a new tab', () => {
     render(<ContactDetails />)
 
-    expect(screen.getByText(site.address.street, { exact: false })).toBeVisible()
+    const link = screen.getByRole('link', { name: new RegExp(site.address.street) })
+    expect(link).toHaveAttribute('href', site.map.linkUrl)
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveTextContent(site.address.postalCode)
+  })
+
+  // The office hours are shown.
+  it('shows the office hours', () => {
+    render(<ContactDetails />)
+
     expect(screen.getByText(site.hours)).toBeVisible()
   })
 })

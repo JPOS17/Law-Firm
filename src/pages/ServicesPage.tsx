@@ -1,5 +1,5 @@
+import { Accordion } from '@/components/Accordion'
 import { CallToAction } from '@/components/CallToAction'
-import { DetailList } from '@/components/DetailList'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
@@ -19,7 +19,7 @@ export function ServicesPage() {
         title="Áreas de práctica"
         intro="Texto de marcador de posición para introducir las áreas de práctica del despacho."
       >
-        <DetailList
+        <Accordion
           items={services.map((service) => ({
             id: service.slug,
             title: service.title,

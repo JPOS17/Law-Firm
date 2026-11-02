@@ -1,25 +1,55 @@
+/* The post list is a plain list with thin dividers, like the other lists on the site */
 .post-list {
   padding: 0;
   border-top: 1px solid var(--color-border);
   list-style: none;
 }
 
+/* The whole row is clickable, and it reacts when the mouse is over it */
 .post-card {
-  padding-block: var(--space-8);
+  position: relative;
+  padding: var(--space-8) var(--space-4);
   border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
+}
+
+.post-card:hover {
+  background: var(--color-bg-alt);
 }
 
 .post-card__title {
   font-size: var(--text-xl);
 }
 
+/* An underline in brass shows that the title is a link */
 .post-card__link {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-500);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
 
-.post-card__link:hover {
+/* Stretches the link over the whole row, so clicking anywhere in it works */
+.post-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.post-card:hover .post-card__link {
   color: var(--color-accent-700);
+  text-decoration-thickness: 2px;
+}
+
+/* The focus outline goes around the whole row, not just the title */
+.post-card__link:focus-visible {
+  outline: none;
+}
+
+.post-card:has(.post-card__link:focus-visible) {
+  outline: 3px solid var(--color-accent-700);
+  outline-offset: -3px;
 }
 
 .post-card__date,
@@ -33,6 +63,27 @@
 .post-card__excerpt {
   max-width: 60ch;
   margin-top: var(--space-3);
+}
+
+.post-card__more {
+  display: inline-block;
+  margin-top: var(--space-4);
+  color: var(--color-accent-700);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.post-card__more::after {
+  content: '→';
+  display: inline-block;
+  margin-left: var(--space-2);
+  transition: transform 0.2s;
+}
+
+.post-card:hover .post-card__more::after {
+  transform: translateX(0.25rem);
 }
 
 .post {

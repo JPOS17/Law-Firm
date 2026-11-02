@@ -1,6 +1,6 @@
 import { CallToAction } from '@/components/CallToAction'
-import { DetailList } from '@/components/DetailList'
 import { Hero } from '@/components/Hero'
+import { Pillars } from '@/components/Pillars'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
 import { site } from '@/content/site'
@@ -27,12 +27,8 @@ export function FirmPage() {
           </p>
         </div>
       </Section>
-      <Section
-        title="Nuestros valores"
-        tone="alt"
-        intro="Texto de marcador de posición para introducir los valores que distinguen al despacho."
-      >
-        <DetailList items={values} />
+      <Section title="Nuestros valores" tone="dark">
+        <Pillars items={values.items} summary={values.summary} />
       </Section>
       <CallToAction
         title="¿Desea conocernos mejor?"
