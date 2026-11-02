@@ -3,6 +3,19 @@
   gap: var(--space-6);
 }
 
+.form__notice {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-bg-alt);
+  font-size: var(--text-sm);
+}
+
+.form__notice-title {
+  font-size: var(--text-base);
+}
+
 .form__note {
   color: var(--color-text-muted);
   font-size: var(--text-sm);

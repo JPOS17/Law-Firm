@@ -24,6 +24,22 @@ export function AttorneyGrid({ attorneys }: AttorneyGridProps) {
           <h3 className="attorney__name">{attorney.name}</h3>
           <p className="attorney__role">{attorney.role}</p>
           <p className="attorney__bio">{attorney.bio}</p>
+          {(attorney.license ?? attorney.school) && (
+            <dl className="attorney__credentials">
+              {attorney.license && (
+                <div>
+                  <dt>Cédula profesional</dt>
+                  <dd>{attorney.license}</dd>
+                </div>
+              )}
+              {attorney.school && (
+                <div>
+                  <dt>Estudios</dt>
+                  <dd>{attorney.school}</dd>
+                </div>
+              )}
+            </dl>
+          )}
         </li>
       ))}
     </ul>

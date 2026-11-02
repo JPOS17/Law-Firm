@@ -26,6 +26,21 @@ describe('AttorneyGrid', () => {
     expect(photo).toHaveAttribute('src', '/maria.jpg')
   })
 
+  // The license number and school are optional and appear only when provided.
+  it('shows the professional license and school when provided', () => {
+    render(<AttorneyGrid attorneys={[{ ...attorney, license: '1234567', school: 'UAA' }]} />)
+
+    expect(screen.getByText('Cédula profesional')).toBeVisible()
+    expect(screen.getByText('1234567')).toBeVisible()
+    expect(screen.getByText('UAA')).toBeVisible()
+  })
+
+  it('shows no credentials when none are provided', () => {
+    render(<AttorneyGrid attorneys={[attorney]} />)
+
+    expect(screen.queryByText('Cédula profesional')).not.toBeInTheDocument()
+  })
+
   // Without a photo, no image is rendered: the initial placeholder is hidden from screen readers.
   it('shows no image when there is no photo', () => {
     render(<AttorneyGrid attorneys={[attorney]} />)
