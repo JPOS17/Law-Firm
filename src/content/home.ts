@@ -26,7 +26,7 @@ export const home = {
       {
         title: 'Estrategia',
         description:
-          'Analizamos las opciones legales y le proponemos un plan claro, con tiempos y costos transparentes.',
+          'Analizamos las opciones legales y le proponemos un plan claro, con información clara sobre alcance, tiempos y honorarios.',
       },
       {
         title: 'Ejecución',

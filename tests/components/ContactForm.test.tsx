@@ -135,4 +135,15 @@ describe('ContactForm', () => {
     expect(link).toHaveAttribute('href', '/aviso-de-privacidad')
     expect(link).toHaveAttribute('target', '_blank')
   })
+
+  // Before typing, the visitor is told that writing does not create a client relationship
+  // and that they should not share confidential details.
+  it('warns that sending a message creates no attorney-client relationship', () => {
+    renderForm()
+
+    const notice = screen.getByRole('complementary', { name: 'Antes de escribirnos' })
+    expect(notice).toBeVisible()
+    expect(notice).toHaveTextContent(/no crea una relación abogado-cliente/)
+    expect(notice).toHaveTextContent(/no incluya información confidencial/)
+  })
 })

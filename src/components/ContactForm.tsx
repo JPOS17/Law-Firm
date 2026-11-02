@@ -17,6 +17,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<ContactErrors>({})
   const [status, setStatus] = useState<Status>('idle')
   const consentId = useId()
+  const noticeId = useId()
   const consentErrorId = `${consentId}-error`
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -64,6 +65,18 @@ export function ContactForm() {
         void handleSubmit(event)
       }}
     >
+      <aside className="form__notice" aria-labelledby={noticeId}>
+        <h3 id={noticeId} className="form__notice-title">
+          Antes de escribirnos
+        </h3>
+        <p>
+          Este formulario es solo para ponerse en contacto con el despacho. Enviar un mensaje no
+          crea una relación abogado-cliente ni constituye asesoría legal. Por favor, no incluya
+          información confidencial ni datos sensibles; los trataremos con usted en la consulta
+          inicial.
+        </p>
+      </aside>
+
       <p className="form__note">Los campos marcados con * son obligatorios.</p>
 
       <FormField label="Nombre" name="name" autoComplete="name" required error={errors.name} />
