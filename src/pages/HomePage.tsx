@@ -29,7 +29,6 @@ export function HomePage() {
           items={services.map((service) => ({
             label: service.title,
             to: `/servicios#${service.slug}`,
-            description: service.description,
           }))}
         />
       </Section>
