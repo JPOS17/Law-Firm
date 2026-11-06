@@ -3,7 +3,6 @@ import { Hero } from '@/components/Hero'
 import { IndexList } from '@/components/IndexList'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { Section } from '@/components/Section'
-import courthouseImage from '@/assets/courthouse.webp'
 import { home } from '@/content/home'
 import { services } from '@/content/services'
 import { site } from '@/content/site'
@@ -18,7 +17,7 @@ export function HomePage() {
         title={home.hero.title}
         lead={home.hero.lead}
         cta={home.hero.cta}
-        image={courthouseImage}
+        image="/courthouse.webp"
       />
       <div className="container section intro">
         <p className="intro__text">{home.intro}</p>
