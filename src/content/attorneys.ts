@@ -12,6 +12,7 @@ export type Attorney = {
 
 // Placeholder team. Replace it with the firm's real attorneys.
 export const attorneys: Attorney[] = [
+  // TODO: placeholder attorney, replace with a real team member
   {
     name: 'Abogado de ejemplo 1',
     role: 'Cargo de ejemplo',
@@ -19,6 +20,7 @@ export const attorneys: Attorney[] = [
     license: '0000000',
     school: 'Universidad de ejemplo',
   },
+  // TODO: placeholder attorney, replace with a real team member
   {
     name: 'Abogado de ejemplo 2',
     role: 'Cargo de ejemplo',
@@ -26,6 +28,7 @@ export const attorneys: Attorney[] = [
     license: '0000000',
     school: 'Universidad de ejemplo',
   },
+  // TODO: placeholder attorney, replace with a real team member
   {
     name: 'Abogado de ejemplo 3',
     role: 'Cargo de ejemplo',
@@ -33,6 +36,7 @@ export const attorneys: Attorney[] = [
     license: '0000000',
     school: 'Universidad de ejemplo',
   },
+  // TODO: placeholder attorney, replace with a real team member
   {
     name: 'Abogado de ejemplo 4',
     role: 'Cargo de ejemplo',

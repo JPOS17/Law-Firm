@@ -1,35 +1,18 @@
 :root {
-  /* Palette: named by role, so a rebrand only changes the values here */
-
-  /* Forest */
-  /* --color-primary-900: #2b3326;
-  --color-primary-700: #4a5a3c;
-  --color-primary-200: #cfd8c2; */
-
-  /* Expresso */
-  --color-primary-900: #2f2420;
-  --color-primary-700: #6b4a35;
-  --color-primary-200: #e0d2c3;
-
-  /* Ink Navy */
-  /* --color-primary-900: #1c2a3d;
-  --color-primary-700: #2f4a6b;
-  --color-primary-200: #cdd7e3; */
-
-  /* OxBlood */
-  /* --color-primary-900: #3d1a1f;
-  --color-primary-700: #7a2e38;
-  --color-primary-200: #e6cfd2; */
-
-  --color-accent-700: #80602f;
-  --color-accent-500: #b08d57;
-  --color-accent-300: #dcc391;
-  --color-neutral-900: #2a2019;
-  --color-neutral-600: #6b5e51;
-  --color-neutral-300: #d3c6ac;
-  --color-neutral-200: #e3d9c6;
-  --color-neutral-100: #eee6d4;
-  --color-neutral-50: #f7f2e8;
+  /* Palette: named by role, so a rebrand only changes the values here.
+     Ink navy with a verdigris teal accent (the green of aged bronze). */
+  --color-primary-900: #0e1a2b;
+  --color-primary-700: #27415f;
+  --color-primary-200: #cfd8e4;
+  --color-accent-700: #1f6f6b;
+  --color-accent-500: #3d9a94;
+  --color-accent-300: #7cc6bf;
+  --color-neutral-900: #14202f;
+  --color-neutral-600: #55606e;
+  --color-neutral-300: #cfd4db;
+  --color-neutral-200: #e1e5ea;
+  --color-neutral-100: #ebeef2;
+  --color-neutral-50: #f5f6f8;
   --color-white: #ffffff;
   --color-error: #a3261a;
 
@@ -44,15 +27,15 @@
   --color-accent: var(--color-accent-500);
 
   /* Typography */
-  --font-body: 'Source Sans 3 Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
   --text-3xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);
-  --text-hero: clamp(2.5rem, 1.5rem + 4.2vw, 4.5rem);
+  --text-hero: clamp(2.75rem, 1.4rem + 4.6vw, 5rem);
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -67,5 +50,6 @@
 
   /* Misc */
   --radius-sm: 2px;
-  --container-max: 72rem;
+  --container-max: 80rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }

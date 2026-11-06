@@ -1,60 +1,54 @@
+/* The photo dissolves into the navy from the right, so the headline owns the page */
 .hero {
   position: relative;
   isolation: isolate;
   display: grid;
-  align-items: center;
-  min-height: 20rem;
+  align-items: end;
+  min-height: 22rem;
   overflow: hidden;
-  padding-block: var(--space-16);
+  padding-block: var(--space-16) var(--space-12);
   background: var(--color-primary-900);
   color: var(--color-white);
 }
 
 .hero--large {
-  min-height: min(40rem, 80vh);
-}
-
-/* Dark tint, strongest on the left where the text sits, so it stays readable on any photo */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--color-primary-900) 94%, transparent),
-    color-mix(in srgb, var(--color-primary-900) 62%, transparent)
-  );
+  min-height: min(37.5rem, 80dvh);
+  padding-block: var(--space-12);
 }
 
 .hero__image {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.22;
+  filter: grayscale(1) contrast(1.1);
 }
 
 .hero__content {
   position: relative;
-  z-index: 2;
 }
 
 .hero__title {
-  max-width: 18ch;
-  margin-top: var(--space-3);
+  max-width: 16ch;
+  margin-top: var(--space-4);
   color: var(--color-white);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
 }
 
 .hero--large .hero__title {
-  max-width: 16ch;
+  max-width: 20ch;
   font-size: var(--text-hero);
 }
 
 .hero__lead {
-  max-width: 52ch;
-  margin-top: var(--space-4);
+  max-width: 48ch;
+  margin-top: var(--space-6);
   color: var(--color-neutral-200);
   font-size: var(--text-lg);
 }
@@ -65,4 +59,109 @@
 
 .hero :focus-visible {
   outline-color: var(--color-accent-300);
+}
+
+@media (min-width: 64rem) {
+  .hero__image {
+    inset: 0 0 0 auto;
+    width: 48%;
+    opacity: 0.55;
+    mask-image: linear-gradient(90deg, transparent, #000 55%);
+  }
+
+  .hero--large .hero__image {
+    width: 42%;
+    opacity: 0.8;
+    filter: grayscale(0.4);
+  }
+
+  /* One short brass rule hangs under the title, the firm's signature mark */
+  .hero__title::after {
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 2px;
+    margin-top: var(--space-8);
+    background: var(--color-accent-500);
+  }
+
+  .hero--large .hero__lead {
+    max-width: 44ch;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__content > * {
+      animation: hero-rise 0.9s var(--ease-out) both;
+    }
+
+    .hero__title {
+      animation-delay: 0.1s;
+    }
+
+    .hero__lead {
+      animation-delay: 0.25s;
+    }
+
+    .hero__cta {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+/* Office details strip, directly under the home hero */
+.office-strip {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+}
+
+.office-strip__list {
+  display: grid;
+}
+
+.office-strip__list > div {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.office-strip__list > div:first-child {
+  border-top: 0;
+}
+
+.office-strip dt {
+  color: var(--color-accent-700);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.office-strip dd {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+}
+
+.office-strip a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (min-width: 48rem) {
+  .office-strip__list {
+    grid-template-columns: 1.4fr 1.2fr 0.8fr;
+  }
+
+  .office-strip__list > div {
+    padding: var(--space-6) var(--space-6) var(--space-6) 0;
+    border-top: 0;
+  }
+
+  .office-strip__list > div + div {
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--color-border);
+  }
 }

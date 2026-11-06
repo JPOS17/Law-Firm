@@ -1,16 +1,27 @@
 .intro__text {
-  max-width: 52rem;
-  padding-left: var(--space-6);
-  border-left: 3px solid var(--color-accent-500);
+  max-width: 50rem;
+  margin-inline: auto;
   color: var(--color-primary-900);
   font-family: var(--font-heading);
   font-size: var(--text-xl);
-  line-height: 1.5;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+/* A short rule above the statement, centered with it */
+.intro__text::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin: 0 auto var(--space-8);
+  background: var(--color-accent-500);
 }
 
 @media (min-width: 48rem) {
   .intro__text {
     font-size: var(--text-2xl);
-    line-height: 1.4;
   }
 }

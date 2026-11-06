@@ -10,6 +10,7 @@ export type Post = {
 
 // Keep the newest post first: the blog page shows them in this order.
 export const posts: Post[] = [
+  // TODO: placeholder article, replace with a real post
   {
     slug: 'articulo-de-ejemplo-uno',
     title: 'Título de ejemplo del primer artículo',
@@ -21,6 +22,7 @@ export const posts: Post[] = [
       'Texto de marcador de posición para el último párrafo del artículo. Aquí se ofrecerán las conclusiones.',
     ],
   },
+  // TODO: placeholder article, replace with a real post
   {
     slug: 'articulo-de-ejemplo-dos',
     title: 'Título de ejemplo del segundo artículo',
@@ -31,6 +33,7 @@ export const posts: Post[] = [
       'Texto de marcador de posición para el segundo párrafo del segundo artículo.',
     ],
   },
+  // TODO: placeholder article, replace with a real post
   {
     slug: 'articulo-de-ejemplo-tres',
     title: 'Título de ejemplo del tercer artículo',

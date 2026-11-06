@@ -1,21 +1,17 @@
-.section__title::before {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 2px;
-  margin-bottom: var(--space-4);
-  background: var(--color-accent-500);
+/* Headings hang in the left margin, like notes beside a legal file; on phones they stack */
+.section__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.section__title {
+  max-width: 14ch;
 }
 
 .section__intro {
-  max-width: 60ch;
+  max-width: 34ch;
   margin-top: var(--space-4);
   color: var(--color-text-muted);
-  font-size: var(--text-lg);
-}
-
-.section__content {
-  margin-top: var(--space-12);
 }
 
 .section--alt {
@@ -31,14 +27,58 @@
   color: var(--color-white);
 }
 
-.section--dark .section__title::before {
-  background: var(--color-accent-300);
-}
-
 .section--dark .section__intro {
   color: var(--color-neutral-200);
 }
 
 .section--dark :focus-visible {
   outline-color: var(--color-accent-300);
+}
+
+@media (min-width: 64rem) {
+  .section__grid {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .section__head {
+    padding-top: var(--space-4);
+    border-top: 2px solid var(--color-accent-500);
+  }
+}
+
+/* Stacked: the title sits above the content, as it did before the margin layout */
+.section--stacked .section__grid {
+  display: block;
+}
+
+.section--stacked .section__head {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.section--stacked .section__title {
+  max-width: none;
+}
+
+.section--stacked .section__title::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin-bottom: var(--space-4);
+  background: var(--color-accent-500);
+}
+
+.section--stacked.section--dark .section__title::before {
+  background: var(--color-accent-300);
+}
+
+.section--stacked .section__intro {
+  max-width: 60ch;
+}
+
+.section--stacked .section__content {
+  margin-top: var(--space-12);
 }

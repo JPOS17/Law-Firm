@@ -1,5 +1,6 @@
 import { ContactBand } from '@/components/ContactBand'
 import { Hero } from '@/components/Hero'
+import { OfficeStrip } from '@/components/OfficeStrip'
 import { IndexList } from '@/components/IndexList'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { Section } from '@/components/Section'
@@ -19,6 +20,7 @@ export function HomePage() {
         cta={home.hero.cta}
         image="/courthouse.webp"
       />
+      <OfficeStrip />
       <div className="container section intro">
         <p className="intro__text">{home.intro}</p>
       </div>
@@ -27,6 +29,7 @@ export function HomePage() {
           items={services.map((service) => ({
             label: service.title,
             to: `/servicios#${service.slug}`,
+            description: service.description,
           }))}
         />
       </Section>

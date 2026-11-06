@@ -6,6 +6,7 @@ export function TermsPage() {
       <title>{`Términos y condiciones | ${site.name}`}</title>
       <section className="container section flow">
         <h1>Términos y condiciones</h1>
+        {/* TODO: placeholder text, replace with real copy */}
         <p>
           Texto de marcador de posición: el texto del aviso de privacidad será proporcionado por el
           despacho.
