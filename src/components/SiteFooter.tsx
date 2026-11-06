@@ -12,11 +12,19 @@ export function SiteFooter() {
           <p>{site.tagline}</p>
         </div>
         <address className="site-footer__address">
-          {address.street}
-          <br />
-          {address.area}
-          <br />
-          {address.postalCode} {address.city}
+          <a
+            className="site-footer__link"
+            href={site.map.linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {address.street}
+            <br />
+            {address.area}
+            <br />
+            {address.postalCode} {address.city}
+            <span className="visually-hidden"> (abre Google Maps en una pestaña nueva)</span>
+          </a>
         </address>
         <nav aria-label="Pie de página">
           <ul className="site-footer__list">

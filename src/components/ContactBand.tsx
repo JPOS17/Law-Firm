@@ -26,7 +26,9 @@ export function ContactBand({ title, text }: ContactBandProps) {
             <WhatsAppLink />
           </li>
           <li>
-            <Link to="/contacto">Enviar un mensaje</Link>
+            <Link className="button" to="/contacto">
+              Enviar un mensaje
+            </Link>
           </li>
         </ul>
       </div>
