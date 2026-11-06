@@ -1,17 +1,51 @@
 .cta-band {
   padding-block: var(--space-section);
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
-  text-align: center;
+  background: var(--color-primary-900);
+  color: var(--color-neutral-200);
+}
+
+.cta-band .container {
+  display: grid;
+  gap: var(--space-6);
+  justify-items: start;
+}
+
+.cta-band__title {
+  max-width: 18ch;
+  color: var(--color-white);
+  font-size: var(--text-3xl);
+  font-weight: 300;
 }
 
 .cta-band__text {
-  max-width: 50ch;
-  margin: var(--space-3) auto 0;
-  color: var(--color-text-muted);
+  max-width: 46ch;
   font-size: var(--text-lg);
 }
 
 .cta-band .button {
-  margin-top: var(--space-8);
+  border-color: var(--color-accent-300);
+  background: var(--color-accent-300);
+  color: var(--color-primary-900);
+}
+
+.cta-band .button:hover {
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-primary-900);
+}
+
+.cta-band :focus-visible {
+  outline-color: var(--color-accent-300);
+}
+
+@media (min-width: 64rem) {
+  .cta-band .container {
+    grid-template-columns: 1.3fr 1fr;
+    column-gap: var(--space-16);
+    align-items: end;
+  }
+
+  .cta-band__title {
+    grid-row: 1 / span 2;
+  }
 }

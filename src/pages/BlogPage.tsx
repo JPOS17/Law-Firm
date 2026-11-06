@@ -11,6 +11,7 @@ export function BlogPage() {
       <title>{`Blog | ${site.name}`}</title>
       <Hero
         title="Blog"
+        // TODO: placeholder text, replace with real copy
         lead="Texto de marcador de posición para una breve descripción del blog."
         image={officeImage}
       />

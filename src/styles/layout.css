@@ -3,16 +3,32 @@
   margin-inline: auto;
 }
 
+@media (min-width: 64rem) {
+  .container {
+    width: min(100% - 2 * var(--space-12), var(--container-max));
+  }
+}
+
 .section {
   padding-block: var(--space-section);
 }
 
+/* A short rule leads into the label, like a tab on a file folder */
 .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   color: var(--color-accent-700);
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: currentcolor;
 }
 
 .eyebrow--on-dark {

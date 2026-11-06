@@ -1,16 +1,23 @@
 .contact-band {
   padding-block: var(--space-section);
+  background: var(--color-bg-alt);
 }
 
 .contact-band__inner {
   display: grid;
-  gap: var(--space-8);
-  align-items: center;
+  gap: var(--space-12);
+  align-items: end;
+}
+
+.contact-band__title {
+  max-width: 16ch;
+  font-size: var(--text-3xl);
+  font-weight: 300;
 }
 
 .contact-band__text {
-  max-width: 46ch;
-  margin-top: var(--space-3);
+  max-width: 40ch;
+  margin-top: var(--space-4);
   color: var(--color-text-muted);
   font-size: var(--text-lg);
 }
@@ -24,28 +31,38 @@
 
 .contact-band__phone {
   display: grid;
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-primary-900);
   color: var(--color-primary-900);
   text-decoration: none;
+}
+
+.contact-band__phone .eyebrow {
+  color: var(--color-accent-700);
 }
 
 .contact-band__number {
   font-family: var(--font-heading);
   font-size: var(--text-2xl);
-  font-weight: 600;
+  font-weight: 300;
   font-variant-numeric: lining-nums;
-}
-
-.contact-band__actions .button {
-  justify-self: start;
 }
 
 .contact-band__phone:hover .contact-band__number {
   color: var(--color-accent-700);
 }
 
+.contact-band__actions li:not(:first-child) {
+  justify-self: start;
+}
+
+.contact-band .whatsapp-link {
+  color: var(--color-primary-900);
+}
+
 @media (min-width: 64rem) {
   .contact-band__inner {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--space-16);
   }
 }

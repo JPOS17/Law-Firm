@@ -24,8 +24,6 @@
   color: var(--color-accent-700);
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .contact-details__value {

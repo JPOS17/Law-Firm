@@ -12,11 +12,13 @@ export function ContactPage() {
       <title>{`Contáctenos | ${site.name}`}</title>
       <Hero
         title="Contáctenos"
+        // TODO: placeholder text, replace with real copy
         lead="Texto de marcador de posición para una breve descripción de lo que hace la firma."
         image={officeImage}
       />
       <Section
         title="Envíenos un mensaje"
+        // TODO: placeholder text, replace with real copy
         intro="Texto de marcador de posición para invitar al visitante a escribir al despacho."
       >
         <div className="contact-layout">
