@@ -3,24 +3,18 @@ import { CallToAction } from '@/components/CallToAction'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
+import { servicesPage } from '@/content/pages/services'
 import { services } from '@/content/services'
 import { site } from '@/content/site'
 
 export function ServicesPage() {
+  const page = servicesPage
+
   return (
     <>
-      <title>{`Nuestros Servicios | ${site.name}`}</title>
-      <Hero
-        title="Nuestros Servicios"
-        // TODO: placeholder text, replace with real copy
-        lead="Texto de marcador de posición para una breve descripción de lo que hace la firma."
-        image={officeImage}
-      />
-      <Section
-        title="Áreas de práctica"
-        // TODO: placeholder text, replace with real copy
-        intro="Texto de marcador de posición para introducir las áreas de práctica del despacho."
-      >
+      <title>{`${page.title} | ${site.name}`}</title>
+      <Hero title={page.title} lead={page.lead} image={officeImage} />
+      <Section title={page.practiceAreas.title} intro={page.practiceAreas.intro}>
         <Accordion
           items={services.map((service) => ({
             id: service.slug,
@@ -29,12 +23,7 @@ export function ServicesPage() {
           }))}
         />
       </Section>
-      <CallToAction
-        title="¿Tiene un asunto legal que atender?"
-        // TODO: placeholder text, replace with real copy
-        text="Texto de marcador de posición para invitar al visitante a ponerse en contacto."
-        cta={{ label: 'Contáctenos', to: '/contacto' }}
-      />
+      <CallToAction {...page.callToAction} />
     </>
   )
 }

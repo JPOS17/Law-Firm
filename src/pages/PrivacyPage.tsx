@@ -1,16 +1,17 @@
+import { privacyPage } from '@/content/pages/privacy'
 import { site } from '@/content/site'
 
 export function PrivacyPage() {
+  const page = privacyPage
+
   return (
     <>
-      <title>{`Aviso de privacidad | ${site.name}`}</title>
+      <title>{`${page.title} | ${site.name}`}</title>
       <section className="container section flow">
-        <h1>Aviso de privacidad</h1>
-        {/* TODO: placeholder text, replace with real copy */}
-        <p>
-          Texto de marcador de posición: el texto del aviso de privacidad será proporcionado por el
-          despacho.
-        </p>
+        <h1>{page.title}</h1>
+        {page.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </section>
     </>
   )

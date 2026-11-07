@@ -1,11 +1,16 @@
-export const home = {
+import { site } from '@/content/site'
+
+// Text of the home page. The practice area names come from services.ts.
+export const homePage = {
+  // The browser tab title (the page heading is hero.title)
+  tabTitle: 'Inicio',
   hero: {
     eyebrow: 'Abogados en Aguascalientes',
     // TODO(client): confirm the headline
     title: 'Asesoría legal con estrategia y compromiso',
     // TODO(client): confirm the subheading below the headline
     lead: 'Planeación estratégica, comunicación clara y seguimiento puntual de cada asunto.',
-    cta: { label: 'Contáctenos', to: '/contacto' },
+    cta: site.contactCta,
   },
   // TODO(client): confirm who the firm serves (people, companies, or both)
   intro:

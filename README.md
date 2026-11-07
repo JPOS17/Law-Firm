@@ -78,7 +78,8 @@ public/              Static files served as-is (favicon, etc.)
 src/
   app/               App root, route list, router, and page layout
   components/        Reusable UI shared across pages (e.g. Hero)
-  pages/             One file per page or route
+  content/           All the site's text (see Where the text lives)
+  pages/             One file per page or route: layout only, no text
   styles/            All global CSS (see Styling)
   main.tsx           Entry point
 tests/               Tests, mirroring the layout of src/
@@ -111,11 +112,27 @@ To style a new component, create `src/styles/components/<name>.css` and add this
 @import './components/<name>.css' layer(components);
 ```
 
+### Where the text lives
+
+All the site's text is in `src/content/`, so the files in `src/pages/` only lay it out.
+
+| Text                                           | File                                                                                 |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------ |
+| One page's headings, intros and paragraphs     | `content/pages/<page>.ts` (`home`, `firm`, `services`, `team`, `contact`, and so on) |
+| Lists: practice areas, attorneys, posts, links | `content/services.ts`, `attorneys.ts`, `posts.ts`, `links.ts`                        |
+| The firm's values                              | `content/values.ts`                                                                  |
+| Name, address, phone, hours, navigation        | `content/site.ts`                                                                    |
+
+Text that still needs the client's real copy or approval is marked with `TODO` (placeholder text to replace) or `TODO(client)` (text we drafted that the client should confirm). Search the project for `TODO` to list them all.
+
+Labels that are part of the interface (form fields, validation messages, screen-reader text) stay in the components.
+
 ### Adding a page
 
 1. Create `src/pages/<Name>Page.tsx`.
-2. Add a route for it in `src/app/routes.tsx`.
-3. Add a test in `tests/pages/`.
+2. Put its text in `src/content/pages/<name>.ts` and import it with `@/content/pages/<name>`.
+3. Add a route for it in `src/app/routes.tsx`.
+4. Add a test in `tests/pages/`.
 
 ### Tests
 

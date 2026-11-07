@@ -4,27 +4,29 @@ import { OfficeStrip } from '@/components/OfficeStrip'
 import { IndexList } from '@/components/IndexList'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { Section } from '@/components/Section'
-import { home } from '@/content/home'
+import { homePage } from '@/content/pages/home'
 import { services } from '@/content/services'
 import { site } from '@/content/site'
 
 export function HomePage() {
+  const page = homePage
+
   return (
     <>
-      <title>{`Inicio | ${site.name}`}</title>
+      <title>{`${page.tabTitle} | ${site.name}`}</title>
       <Hero
         size="large"
-        eyebrow={home.hero.eyebrow}
-        title={home.hero.title}
-        lead={home.hero.lead}
-        cta={home.hero.cta}
+        eyebrow={page.hero.eyebrow}
+        title={page.hero.title}
+        lead={page.hero.lead}
+        cta={page.hero.cta}
         image="/courthouse.webp"
       />
       <OfficeStrip />
       <div className="container section intro">
-        <p className="intro__text">{home.intro}</p>
+        <p className="intro__text">{page.intro}</p>
       </div>
-      <Section title={home.services.title} intro={home.services.intro} tone="alt">
+      <Section title={page.services.title} intro={page.services.intro} tone="alt">
         <IndexList
           items={services.map((service) => ({
             label: service.title,
@@ -32,10 +34,10 @@ export function HomePage() {
           }))}
         />
       </Section>
-      <Section title={home.process.title} intro={home.process.intro} tone="dark">
-        <ProcessSteps steps={home.process.steps} />
+      <Section title={page.process.title} intro={page.process.intro} tone="dark">
+        <ProcessSteps steps={page.process.steps} />
       </Section>
-      <ContactBand title={home.contact.title} text={home.contact.text} />
+      <ContactBand title={page.contact.title} text={page.contact.text} />
     </>
   )
 }

@@ -3,23 +3,17 @@ import { LinkList } from '@/components/LinkList'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
 import { links } from '@/content/links'
+import { linksPage } from '@/content/pages/links'
 import { site } from '@/content/site'
 
 export function LinksPage() {
+  const page = linksPage
+
   return (
     <>
-      <title>{`Enlaces de interés | ${site.name}`}</title>
-      <Hero
-        title="Enlaces de interés"
-        // TODO: placeholder text, replace with real copy
-        lead="Texto de marcador de posición para una breve descripción de los enlaces recomendados."
-        image={officeImage}
-      />
-      <Section
-        title="Sitios recomendados"
-        // TODO: placeholder text, replace with real copy
-        intro="Texto de marcador de posición para introducir los sitios de interés jurídico."
-      >
+      <title>{`${page.title} | ${site.name}`}</title>
+      <Hero title={page.title} lead={page.lead} image={officeImage} />
+      <Section title={page.sites.title} intro={page.sites.intro}>
         <LinkList items={links} />
       </Section>
     </>

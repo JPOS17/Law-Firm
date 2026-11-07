@@ -4,23 +4,17 @@ import { Hero } from '@/components/Hero'
 import { LocationMap } from '@/components/LocationMap'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
+import { contactPage } from '@/content/pages/contact'
 import { site } from '@/content/site'
 
 export function ContactPage() {
+  const page = contactPage
+
   return (
     <>
-      <title>{`Contáctenos | ${site.name}`}</title>
-      <Hero
-        title="Contáctenos"
-        // TODO: placeholder text, replace with real copy
-        lead="Texto de marcador de posición para una breve descripción de lo que hace la firma."
-        image={officeImage}
-      />
-      <Section
-        title="Envíenos un mensaje"
-        // TODO: placeholder text, replace with real copy
-        intro="Texto de marcador de posición para invitar al visitante a escribir al despacho."
-      >
+      <title>{`${page.title} | ${site.name}`}</title>
+      <Hero title={page.title} lead={page.lead} image={officeImage} />
+      <Section title={page.form.title} intro={page.form.intro}>
         <div className="contact-layout">
           <ContactForm />
           <div className="contact-aside">

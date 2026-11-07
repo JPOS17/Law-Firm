@@ -1,16 +1,17 @@
+import { termsPage } from '@/content/pages/terms'
 import { site } from '@/content/site'
 
 export function TermsPage() {
+  const page = termsPage
+
   return (
     <>
-      <title>{`Términos y condiciones | ${site.name}`}</title>
+      <title>{`${page.title} | ${site.name}`}</title>
       <section className="container section flow">
-        <h1>Términos y condiciones</h1>
-        {/* TODO: placeholder text, replace with real copy */}
-        <p>
-          Texto de marcador de posición: el texto de los términos y condiciones será proporcionado
-          por el despacho.
-        </p>
+        <h1>{page.title}</h1>
+        {page.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </section>
     </>
   )
