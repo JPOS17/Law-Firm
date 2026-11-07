@@ -86,11 +86,6 @@ export function SiteHeader() {
                 </NavLink>
               </li>
             ))}
-            <li className="site-header__cta">
-              <Link className="button" to="/contacto">
-                Agendar consulta
-              </Link>
-            </li>
           </ul>
         </nav>
       </div>

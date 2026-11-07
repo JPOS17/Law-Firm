@@ -32,15 +32,14 @@ describe('SiteHeader', () => {
     }
   })
 
-  // The header always carries a clear way to book a consultation.
-  it('offers a button that leads to the contact page', () => {
+  // The site is a presentation of the firm, not a booking site, so the navigation holds
+  // only the pages in site.nav and no separate "book a consultation" button.
+  it('has no links besides the navigation items', () => {
     renderHeader()
 
     const nav = screen.getByRole('navigation', { name: 'Principal' })
-    expect(within(nav).getByRole('link', { name: 'Agendar consulta' })).toHaveAttribute(
-      'href',
-      '/contacto',
-    )
+    expect(within(nav).getAllByRole('link')).toHaveLength(site.nav.length)
+    expect(within(nav).queryByRole('link', { name: /agendar/i })).not.toBeInTheDocument()
   })
 
   // The firm name acts as the link back to the home page.

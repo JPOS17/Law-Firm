@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { links } from '@/content/links'
 import { posts } from '@/content/posts'
 import { services } from '@/content/services'
 
@@ -15,6 +16,17 @@ describe('content', () => {
     const slugs = posts.map((post) => post.slug)
 
     expect(new Set(slugs).size).toBe(slugs.length)
+  })
+
+  // Each link is used as the list key, so two entries with the same address would clash.
+  // Links to other sites must also be secure (https).
+  it('gives every external link its own secure address', () => {
+    const urls = links.map((link) => link.url)
+
+    expect(new Set(urls).size).toBe(urls.length)
+    for (const url of urls) {
+      expect(url).toMatch(/^https:\/\//)
+    }
   })
 
   // posts.ts asks for the newest post first, because the publications page shows them in that order.

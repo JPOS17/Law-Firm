@@ -88,6 +88,7 @@ describe('routes', () => {
     ['/equipo', 'Nuestro Equipo'],
     ['/publicaciones', 'Publicaciones'],
     ['/contacto', 'Contáctenos'],
+    ['/enlaces', 'Enlaces de interés'],
     ['/terminos-y-condiciones', 'Términos y condiciones'],
     ['/aviso-de-privacidad', 'Aviso de privacidad'],
     ['/does-not-exist', 'Página no encontrada'],
