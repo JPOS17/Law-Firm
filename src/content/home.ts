@@ -3,16 +3,19 @@ export const home = {
     eyebrow: 'Abogados en Aguascalientes',
     // TODO(client): confirm the headline
     title: 'Asesoría legal con estrategia y compromiso',
+    // TODO(client): confirm the subheading below the headline
     lead: 'Planeación estratégica, comunicación clara y seguimiento puntual de cada asunto.',
     cta: { label: 'Contáctenos', to: '/contacto' },
   },
   // TODO(client): confirm who the firm serves (people, companies, or both)
   intro:
     'Somos un despacho de abogados con sede en Aguascalientes, dedicado a la asesoría y la planeación estratégica legal. Atendemos asuntos en Aguascalientes, Guanajuato y Jalisco. Acompañamos a nuestros clientes con experiencia, transparencia y comunicación constante, y damos seguimiento puntual a cada asunto.',
+  // TODO(client): confirm the wording of the practice areas section
   services: {
     title: 'Áreas de práctica',
     intro: 'Elija un área para conocer cómo podemos ayudarle.',
   },
+  // TODO(client): confirm the section title and intro (the steps have their own note below)
   process: {
     title: 'Cómo trabajamos',
     intro: 'Un camino claro, desde la primera conversación hasta la conclusión del asunto.',
@@ -40,6 +43,7 @@ export const home = {
       },
     ],
   },
+  // TODO(client): confirm the wording of the closing contact section
   contact: {
     title: '¿Desea conocer cómo podemos ayudarle?',
     text: 'Llámenos o escríbanos por WhatsApp y le atenderemos con gusto.',

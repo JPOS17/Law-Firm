@@ -65,6 +65,7 @@ export function ContactForm() {
         void handleSubmit(event)
       }}
     >
+      {/* TODO(client): have the firm review this disclaimer (no attorney-client relationship) */}
       <aside className="form__notice" aria-labelledby={noticeId}>
         <h3 id={noticeId} className="form__notice-title">
           Antes de escribirnos
