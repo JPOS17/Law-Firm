@@ -4,11 +4,11 @@ export const home = {
     // TODO(client): confirm the headline
     title: 'Asesoría legal con estrategia y compromiso',
     lead: 'Planeación estratégica, comunicación clara y seguimiento puntual de cada asunto.',
-    cta: { label: 'Agendar una consulta', to: '/contacto' },
+    cta: { label: 'Contáctenos', to: '/contacto' },
   },
   // TODO(client): confirm who the firm serves (people, companies, or both)
   intro:
-    'Somos un despacho de abogados en Aguascalientes dedicado a la asesoría y la planeación estratégica legal. Acompañamos a nuestros clientes con experiencia, transparencia y comunicación constante, y damos seguimiento puntual a cada asunto.',
+    'Somos un despacho de abogados con sede en Aguascalientes, dedicado a la asesoría y la planeación estratégica legal. Atendemos asuntos en Aguascalientes, Guanajuato y Jalisco. Acompañamos a nuestros clientes con experiencia, transparencia y comunicación constante, y damos seguimiento puntual a cada asunto.',
   services: {
     title: 'Áreas de práctica',
     intro: 'Elija un área para conocer cómo podemos ayudarle.',

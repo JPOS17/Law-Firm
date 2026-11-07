@@ -11,6 +11,7 @@ import { TeamPage } from '@/pages/TeamPage'
 import { FirmPage } from '@/pages/FirmPage'
 import { PublicationsPage } from '@/pages/PublicationsPage'
 import { PublicationPage } from '@/pages/PublicationPage'
+import { LinksPage } from '@/pages/LinksPage'
 import { TermsPage } from '@/pages/TermsPage'
 import { PrivacyPage } from '@/pages/PrivacyPage'
 
@@ -27,6 +28,7 @@ export const routes: RouteObject[] = [
       { path: 'publicaciones', element: <PublicationsPage /> },
       { path: 'publicaciones/:slug', element: <PublicationPage /> },
       { path: 'contacto', element: <ContactPage /> },
+      { path: 'enlaces', element: <LinksPage /> },
       { path: 'terminos-y-condiciones', element: <TermsPage /> },
       { path: 'aviso-de-privacidad', element: <PrivacyPage /> },
       { path: '*', element: <NotFoundPage /> },

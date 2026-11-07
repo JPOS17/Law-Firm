@@ -34,6 +34,7 @@ export const site = {
     { label: 'Contacto', to: '/contacto' },
   ] satisfies NavItem[],
   footerNav: [
+    { label: 'Enlaces de interés', to: '/enlaces' },
     { label: 'Términos y condiciones', to: '/terminos-y-condiciones' },
     { label: 'Aviso de privacidad', to: '/aviso-de-privacidad' },
   ] satisfies NavItem[],

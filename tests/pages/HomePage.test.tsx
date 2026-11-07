@@ -7,7 +7,7 @@ import { site } from '@/content/site'
 import { renderAt } from '../renderAt'
 
 describe('HomePage', () => {
-  // The hero has the headline and one clear action: booking a consultation.
+  // The hero has the headline and one clear action: getting in touch.
   it('has a headline and a single call to action in the hero', async () => {
     renderAt('/')
 
@@ -23,6 +23,16 @@ describe('HomePage', () => {
     renderAt('/')
 
     expect(await screen.findByText(home.intro)).toBeVisible()
+  })
+
+  // The intro says where the office is and which states the firm works in.
+  it('names the office city and every state the firm serves', async () => {
+    renderAt('/')
+
+    const intro = await screen.findByText(home.intro)
+    expect(intro).toHaveTextContent('con sede en Aguascalientes')
+    expect(intro).toHaveTextContent('Guanajuato')
+    expect(intro).toHaveTextContent('Jalisco')
   })
 
   // The home page lists the names of the areas of practice only. The detail
