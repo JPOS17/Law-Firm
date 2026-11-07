@@ -1,14 +1,17 @@
+import { errorPage } from '@/content/pages/error'
 import { site } from '@/content/site'
 import { Link } from 'react-router'
 
 export function ErrorPage() {
+  const page = errorPage
+
   return (
     <>
-      <title>{`Error | ${site.name}`}</title>
+      <title>{`${page.tabTitle} | ${site.name}`}</title>
       <main className="container section">
-        <h1>Ocurrió un error inesperado</h1>
-        <p>Por favor, inténtelo de nuevo, o regrese a la página de inicio.</p>
-        <Link to="/">Volver al inicio</Link>
+        <h1>{page.title}</h1>
+        <p>{page.text}</p>
+        <Link to="/">{page.back}</Link>
       </main>
     </>
   )

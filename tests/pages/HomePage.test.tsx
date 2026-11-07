@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import { home } from '@/content/home'
+import { homePage } from '@/content/pages/home'
 import { services } from '@/content/services'
 import { site } from '@/content/site'
 import { renderAt } from '../renderAt'
@@ -11,10 +11,12 @@ describe('HomePage', () => {
   it('has a headline and a single call to action in the hero', async () => {
     renderAt('/')
 
-    expect(await screen.findByRole('heading', { level: 1, name: home.hero.title })).toBeVisible()
-    expect(screen.getByRole('link', { name: home.hero.cta.label })).toHaveAttribute(
+    expect(
+      await screen.findByRole('heading', { level: 1, name: homePage.hero.title }),
+    ).toBeVisible()
+    expect(screen.getByRole('link', { name: homePage.hero.cta.label })).toHaveAttribute(
       'href',
-      home.hero.cta.to,
+      homePage.hero.cta.to,
     )
   })
 
@@ -22,14 +24,14 @@ describe('HomePage', () => {
   it('shows the short introduction to the firm', async () => {
     renderAt('/')
 
-    expect(await screen.findByText(home.intro)).toBeVisible()
+    expect(await screen.findByText(homePage.intro)).toBeVisible()
   })
 
   // The intro says where the office is and which states the firm works in.
   it('names the office city and every state the firm serves', async () => {
     renderAt('/')
 
-    const intro = await screen.findByText(home.intro)
+    const intro = await screen.findByText(homePage.intro)
     expect(intro).toHaveTextContent('con sede en Aguascalientes')
     expect(intro).toHaveTextContent('Guanajuato')
     expect(intro).toHaveTextContent('Jalisco')
@@ -70,19 +72,23 @@ describe('HomePage', () => {
   it('shows the steps of how the firm works, in order', async () => {
     renderAt('/')
 
-    expect(await screen.findByRole('heading', { level: 2, name: home.process.title })).toBeVisible()
+    expect(
+      await screen.findByRole('heading', { level: 2, name: homePage.process.title }),
+    ).toBeVisible()
     const titles = screen
       .getAllByRole('heading', { level: 3 })
       .map((heading) => heading.textContent)
-      .filter((title) => home.process.steps.some((step) => step.title === title))
-    expect(titles).toEqual(home.process.steps.map((step) => step.title))
+      .filter((title) => homePage.process.steps.some((step) => step.title === title))
+    expect(titles).toEqual(homePage.process.steps.map((step) => step.title))
   })
 
   // The page closes with direct ways to reach the firm, not only a link to the contact page.
   it('closes with the phone number and WhatsApp', async () => {
     renderAt('/')
 
-    expect(await screen.findByRole('heading', { level: 2, name: home.contact.title })).toBeVisible()
+    expect(
+      await screen.findByRole('heading', { level: 2, name: homePage.contact.title }),
+    ).toBeVisible()
     const phone = screen.getAllByRole('link', { name: new RegExp(site.phone.label) })
     expect(phone.some((link) => link.getAttribute('href') === site.phone.href)).toBe(true)
     const whatsapp = screen.getAllByRole('link', { name: /WhatsApp/ })
@@ -93,7 +99,7 @@ describe('HomePage', () => {
   it('does not repeat the firm values', async () => {
     renderAt('/')
 
-    await screen.findByRole('heading', { level: 1, name: home.hero.title })
+    await screen.findByRole('heading', { level: 1, name: homePage.hero.title })
     expect(screen.queryByRole('heading', { name: 'Nuestros valores' })).not.toBeInTheDocument()
   })
 })

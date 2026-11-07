@@ -26,6 +26,8 @@ export const site = {
     linkUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressLine)}`,
     embedUrl: `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}&output=embed`,
   },
+  // The action every page ends with
+  contactCta: { label: 'Contáctenos', to: '/contacto' },
   nav: [
     { label: 'La Firma', to: '/la-firma' },
     { label: 'Servicios', to: '/servicios' },

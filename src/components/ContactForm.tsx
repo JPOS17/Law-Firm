@@ -2,6 +2,7 @@ import { useId, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router'
 import { FormField } from '@/components/FormField'
+import { contactPage } from '@/content/pages/contact'
 import { submitContactForm, validateContactForm } from '@/lib/contactForm'
 import type { ContactErrors } from '@/lib/contactForm'
 
@@ -65,17 +66,11 @@ export function ContactForm() {
         void handleSubmit(event)
       }}
     >
-      {/* TODO(client): have the firm review this disclaimer (no attorney-client relationship) */}
       <aside className="form__notice" aria-labelledby={noticeId}>
         <h3 id={noticeId} className="form__notice-title">
-          Antes de escribirnos
+          {contactPage.formNotice.title}
         </h3>
-        <p>
-          Este formulario es solo para ponerse en contacto con el despacho. Enviar un mensaje no
-          crea una relación abogado-cliente ni constituye asesoría legal. Por favor, no incluya
-          información confidencial ni datos sensibles; los trataremos con usted en la consulta
-          inicial.
-        </p>
+        <p>{contactPage.formNotice.text}</p>
       </aside>
 
       <p className="form__note">Los campos marcados con * son obligatorios.</p>

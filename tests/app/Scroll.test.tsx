@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import { home } from '@/content/home'
+import { homePage } from '@/content/pages/home'
 import { renderAt } from '../renderAt'
 
 describe('scrolling between pages', () => {
@@ -10,7 +10,7 @@ describe('scrolling between pages', () => {
     const scrollTo = vi.spyOn(window, 'scrollTo')
     renderAt('/')
     const user = userEvent.setup()
-    await screen.findByRole('heading', { level: 1, name: home.hero.title })
+    await screen.findByRole('heading', { level: 1, name: homePage.hero.title })
     scrollTo.mockClear()
 
     await user.click(screen.getByRole('link', { name: 'Equipo' }))

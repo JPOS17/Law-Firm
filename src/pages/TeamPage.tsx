@@ -4,31 +4,20 @@ import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import officeImage from '@/assets/office.webp'
 import { attorneys } from '@/content/attorneys'
+import { teamPage } from '@/content/pages/team'
 import { site } from '@/content/site'
 
 export function TeamPage() {
+  const page = teamPage
+
   return (
     <>
-      <title>{`Nuestro Equipo | ${site.name}`}</title>
-      <Hero
-        title="Nuestro Equipo"
-        // TODO: placeholder text, replace with real copy
-        lead="Texto de marcador de posición para una breve descripción de lo que hace la firma."
-        image={officeImage}
-      />
-      <Section
-        title="Nuestros abogados"
-        // TODO: placeholder text, replace with real copy
-        intro="Texto de marcador de posición para introducir al equipo de abogados."
-      >
+      <title>{`${page.title} | ${site.name}`}</title>
+      <Hero title={page.title} lead={page.lead} image={officeImage} />
+      <Section title={page.attorneys.title} intro={page.attorneys.intro}>
         <AttorneyGrid attorneys={attorneys} />
       </Section>
-      <CallToAction
-        title="¿Desea hablar con nosotros?"
-        // TODO: placeholder text, replace with real copy
-        text="Texto de marcador de posición para invitar al visitante a ponerse en contacto."
-        cta={{ label: 'Contáctenos', to: '/contacto' }}
-      />
+      <CallToAction {...page.callToAction} />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { home } from '@/content/home'
+import { homePage } from '@/content/pages/home'
 import { posts } from '@/content/posts'
 import { site } from '@/content/site'
 import { renderAt } from '../renderAt'
@@ -37,7 +37,9 @@ describe('routes', () => {
   it('renders the home page at the root path', async () => {
     renderAt('/')
 
-    expect(await screen.findByRole('heading', { level: 1, name: home.hero.title })).toBeVisible()
+    expect(
+      await screen.findByRole('heading', { level: 1, name: homePage.hero.title }),
+    ).toBeVisible()
   })
 
   // The "/la-firma" route should show the firm page with its own heading.
@@ -75,7 +77,7 @@ describe('routes', () => {
   it('sends the home page call to action to the contact page', async () => {
     renderAt('/')
 
-    fireEvent.click(await screen.findByRole('link', { name: home.hero.cta.label }))
+    fireEvent.click(await screen.findByRole('link', { name: homePage.hero.cta.label }))
 
     expect(await screen.findByRole('heading', { level: 1, name: 'Contáctenos' })).toBeVisible()
   })
