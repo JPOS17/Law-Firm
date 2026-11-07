@@ -66,4 +66,22 @@ describe('Section', () => {
     )
     expect(screen.getByRole('region')).toHaveClass(`section--${tone}`)
   })
+
+  // The title hangs in the left margin by default. "stacked" puts it above the content,
+  // and only that layout adds the extra class.
+  it('stacks the title above the content only when asked', () => {
+    const { rerender } = render(
+      <Section title="Mi sección">
+        <p>contenido</p>
+      </Section>,
+    )
+    expect(screen.getByRole('region')).not.toHaveClass('section--stacked')
+
+    rerender(
+      <Section title="Mi sección" layout="stacked">
+        <p>contenido</p>
+      </Section>,
+    )
+    expect(screen.getByRole('region')).toHaveClass('section--stacked')
+  })
 })
