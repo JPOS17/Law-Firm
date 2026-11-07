@@ -4,7 +4,7 @@ import { site } from '@/content/site'
 import { formatDate } from '@/lib/format'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
-export function BlogPostPage() {
+export function PublicationPage() {
   const { slug } = useParams()
   const post = posts.find((item) => item.slug === slug)
 
@@ -16,6 +16,9 @@ export function BlogPostPage() {
     <>
       <title>{`${post.title} | ${site.name}`}</title>
       <article className="container section post">
+        <Link to="/publicaciones" className="post__back">
+          ← Volver a publicaciones
+        </Link>
         <h1>{post.title}</h1>
         <time className="post__date" dateTime={post.date}>
           {formatDate(post.date)}
@@ -25,9 +28,6 @@ export function BlogPostPage() {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
-        <Link to="/blog" className="post__back">
-          ← Volver al blog
-        </Link>
       </article>
     </>
   )

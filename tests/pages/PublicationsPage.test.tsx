@@ -3,12 +3,12 @@ import { describe, expect, it } from 'vitest'
 import { posts } from '@/content/posts'
 import { renderAt } from '../renderAt'
 
-describe('BlogPage', () => {
+describe('PublicationsPage', () => {
   // Each post shows a "read article" cue so it is clear the row can be opened.
   // The cue is only visual: the row must still have exactly one link (the title),
   // so screen reader users don't hear the same link twice.
   it('shows a read-article cue on every post, without adding a second link', async () => {
-    renderAt('/blog')
+    renderAt('/publicaciones')
 
     const main = await screen.findByRole('main')
     const rows = within(main).getAllByRole('listitem')
