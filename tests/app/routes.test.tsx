@@ -86,7 +86,7 @@ describe('routes', () => {
     ['/la-firma', 'Nuestra Firma'],
     ['/servicios', 'Nuestros Servicios'],
     ['/equipo', 'Nuestro Equipo'],
-    ['/blog', 'Blog'],
+    ['/publicaciones', 'Publicaciones'],
     ['/contacto', 'Contáctenos'],
     ['/terminos-y-condiciones', 'Términos y condiciones'],
     ['/aviso-de-privacidad', 'Aviso de privacidad'],
@@ -98,20 +98,20 @@ describe('routes', () => {
   })
 })
 
-describe('blog routes', () => {
-  // The blog list should show every post as a link to that post's own address.
+describe('publication routes', () => {
+  // The publications list should show every post as a link to that post's own address.
   it('lists every post with a link to its page', async () => {
-    renderAt('/blog')
+    renderAt('/publicaciones')
 
     for (const post of posts) {
       const link = await screen.findByRole('link', { name: post.title })
-      expect(link).toHaveAttribute('href', `/blog/${post.slug}`)
+      expect(link).toHaveAttribute('href', `/publicaciones/${post.slug}`)
     }
   })
 
   // Each post address should show that post's article, and use its title for the tab.
-  it.each(posts)('shows the article at /blog/$slug', async ({ slug, title }) => {
-    renderAt(`/blog/${slug}`)
+  it.each(posts)('shows the article at /publicaciones/$slug', async ({ slug, title }) => {
+    renderAt(`/publicaciones/${slug}`)
 
     expect(await screen.findByRole('heading', { level: 1, name: title })).toBeVisible()
     await waitFor(() => expect(document.title).toBe(`${title} | ${site.name}`))
@@ -119,7 +119,7 @@ describe('blog routes', () => {
 
   // A post address that doesn't exist should show the not-found page, not a broken article.
   it('shows the not-found page for an unknown article', async () => {
-    renderAt('/blog/no-existe')
+    renderAt('/publicaciones/no-existe')
 
     expect(await screen.findByRole('heading', { level: 1, name: NOT_FOUND_HEADING })).toBeVisible()
   })

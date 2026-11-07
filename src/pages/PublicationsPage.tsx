@@ -5,14 +5,14 @@ import { posts } from '@/content/posts'
 import { site } from '@/content/site'
 import { formatDate } from '@/lib/format'
 
-export function BlogPage() {
+export function PublicationsPage() {
   return (
     <>
-      <title>{`Blog | ${site.name}`}</title>
+      <title>{`Publicaciones | ${site.name}`}</title>
       <Hero
-        title="Blog"
+        title="Publicaciones"
         // TODO: placeholder text, replace with real copy
-        lead="Texto de marcador de posición para una breve descripción del blog."
+        lead="Texto de marcador de posición para una breve descripción de las publicaciones."
         image={officeImage}
       />
       <section className="container section">
@@ -20,7 +20,7 @@ export function BlogPage() {
           {posts.map((post) => (
             <li key={post.slug} className="post-card">
               <h2 className="post-card__title">
-                <Link to={`/blog/${post.slug}`} className="post-card__link">
+                <Link to={`/publicaciones/${post.slug}`} className="post-card__link">
                   {post.title}
                 </Link>
               </h2>

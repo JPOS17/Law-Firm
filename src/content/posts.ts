@@ -8,7 +8,7 @@ export type Post = {
   body: string[]
 }
 
-// Keep the newest post first: the blog page shows them in this order.
+// Keep the newest post first: the publications page shows them in this order.
 export const posts: Post[] = [
   // TODO: placeholder article, replace with a real post
   {

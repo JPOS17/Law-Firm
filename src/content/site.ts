@@ -30,7 +30,7 @@ export const site = {
     { label: 'La Firma', to: '/la-firma' },
     { label: 'Servicios', to: '/servicios' },
     { label: 'Equipo', to: '/equipo' },
-    { label: 'Blog', to: '/blog' },
+    { label: 'Publicaciones', to: '/publicaciones' },
     { label: 'Contacto', to: '/contacto' },
   ] satisfies NavItem[],
   footerNav: [
