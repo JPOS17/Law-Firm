@@ -32,6 +32,17 @@ describe('SiteHeader', () => {
     }
   })
 
+  // The header always carries a clear way to book a consultation.
+  it('offers a button that leads to the contact page', () => {
+    renderHeader()
+
+    const nav = screen.getByRole('navigation', { name: 'Principal' })
+    expect(within(nav).getByRole('link', { name: 'Agendar consulta' })).toHaveAttribute(
+      'href',
+      '/contacto',
+    )
+  })
+
   // The firm name acts as the link back to the home page.
   it('links the firm name to the home page', () => {
     renderHeader()
