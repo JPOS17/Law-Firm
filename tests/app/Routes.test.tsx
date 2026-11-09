@@ -1,6 +1,15 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import { contactPage } from '@/content/pages/contact'
+import { firmPage } from '@/content/pages/firm'
 import { homePage } from '@/content/pages/home'
+import { linksPage } from '@/content/pages/links'
+import { notFoundPage } from '@/content/pages/notFound'
+import { privacyPage } from '@/content/pages/privacy'
+import { publicationsPage } from '@/content/pages/publications'
+import { servicesPage } from '@/content/pages/services'
+import { teamPage } from '@/content/pages/team'
+import { termsPage } from '@/content/pages/terms'
 import { posts } from '@/content/posts'
 import { site } from '@/content/site'
 import { renderAt } from '../renderAt'
@@ -82,18 +91,18 @@ describe('routes', () => {
     expect(await screen.findByRole('heading', { level: 1, name: 'Contáctenos' })).toBeVisible()
   })
 
-  // Each page sets its own browser tab title ("<page> | <firm name>").
+  // Each page sets its own browser tab title ("<page's search title> | <firm name>").
   it.each([
-    ['/', 'Inicio'],
-    ['/la-firma', 'Nuestra Firma'],
-    ['/servicios', 'Nuestros Servicios'],
-    ['/equipo', 'Nuestro Equipo'],
-    ['/publicaciones', 'Publicaciones'],
-    ['/contacto', 'Contáctenos'],
-    ['/enlaces', 'Enlaces de interés'],
-    ['/terminos-y-condiciones', 'Términos y condiciones'],
-    ['/aviso-de-privacidad', 'Aviso de privacidad'],
-    ['/does-not-exist', 'Página no encontrada'],
+    ['/', homePage.seo.title],
+    ['/la-firma', firmPage.seo.title],
+    ['/servicios', servicesPage.seo.title],
+    ['/equipo', teamPage.seo.title],
+    ['/publicaciones', publicationsPage.seo.title],
+    ['/contacto', contactPage.seo.title],
+    ['/enlaces', linksPage.seo.title],
+    ['/terminos-y-condiciones', termsPage.seo.title],
+    ['/aviso-de-privacidad', privacyPage.seo.title],
+    ['/does-not-exist', notFoundPage.title],
   ])('sets the tab title at %s', async (path, pageTitle) => {
     renderAt(path)
 

@@ -3,6 +3,13 @@ import { site } from '@/content/site'
 // Text of the firm page. The values themselves are in values.ts.
 export const firmPage = {
   title: 'Nuestra Firma',
+  // What search engines show for this page.
+  // TODO(client): confirm this search-result text
+  seo: {
+    title: 'Nuestra firma',
+    description:
+      'Conozca a Delgado Gutiérrez Abogados: nuestra trayectoria y los valores que guían nuestro trabajo, como la experiencia, la transparencia y el compromiso.',
+  },
   // TODO: placeholder text, replace with real copy
   lead: 'Texto de marcador de posición para una breve descripción de lo que hace la firma.',
   about: {

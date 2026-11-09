@@ -1,6 +1,13 @@
 // Text of the contact page. The address, phone, email and hours are in ../site.ts.
 export const contactPage = {
   title: 'Contáctenos',
+  // What search engines show for this page.
+  // TODO(client): confirm this search-result text
+  seo: {
+    title: 'Contacto y ubicación',
+    description:
+      'Contacte a Delgado Gutiérrez Abogados en Aguascalientes: llame, escriba por WhatsApp o envíe un mensaje. Sierra Fría 427, Bosques del Prado Norte.',
+  },
   // TODO: placeholder text, replace with real copy
   lead: 'Texto de marcador de posición para una breve descripción de lo que hace la firma.',
   form: {

@@ -24,7 +24,6 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.22;
-  filter: grayscale(1) contrast(1.1);
 }
 
 .hero__content {
@@ -70,7 +69,7 @@
   }
 
   .hero--large .hero__image {
-    width: 42%;
+    width: 55%;
     opacity: 0.8;
     filter: grayscale(0.4);
   }

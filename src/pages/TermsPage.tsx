@@ -1,12 +1,12 @@
 import { termsPage } from '@/content/pages/terms'
-import { site } from '@/content/site'
+import { Seo } from '@/components/Seo'
 
 export function TermsPage() {
   const page = termsPage
 
   return (
     <>
-      <title>{`${page.title} | ${site.name}`}</title>
+      <Seo title={page.seo.title} description={page.seo.description} />
       <section className="container section flow">
         <h1>{page.title}</h1>
         {page.paragraphs.map((paragraph) => (

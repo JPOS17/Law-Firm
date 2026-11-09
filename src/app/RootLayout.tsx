@@ -1,6 +1,7 @@
 import { Outlet, ScrollRestoration } from 'react-router'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
+import { StructuredData } from '@/components/StructuredData'
 
 export function RootLayout() {
   return (
@@ -13,6 +14,7 @@ export function RootLayout() {
         <Outlet />
       </main>
       <SiteFooter />
+      <StructuredData />
       <ScrollRestoration />
     </>
   )

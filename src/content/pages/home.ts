@@ -2,8 +2,13 @@ import { site } from '@/content/site'
 
 // Text of the home page. The practice area names come from services.ts.
 export const homePage = {
-  // The browser tab title (the page heading is hero.title)
-  tabTitle: 'Inicio',
+  // What search engines show for this page (the page heading is hero.title).
+  // The title leads with what people type into Google; the firm's name is added after it.
+  // TODO(client): confirm this search-result text
+  seo: {
+    title: 'Abogados en Aguascalientes',
+    description: site.description,
+  },
   hero: {
     eyebrow: 'Abogados en Aguascalientes',
     // TODO(client): confirm the headline

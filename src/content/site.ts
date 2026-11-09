@@ -15,6 +15,22 @@ const addressLine = `${address.street}, ${address.area}, ${address.postalCode} $
 export const site = {
   name: 'Delgado Gutiérrez Abogados',
   tagline: 'Asesoría y planeación estratégica legal',
+  // TODO(client): confirm the final domain. No trailing slash. If it changes, also update
+  // index.html and public/robots.txt and public/sitemap.xml (tests/seo fails until they match).
+  url: 'https://delgadoabogados.com.mx',
+  // The default summary, used by search engines and when the link is shared.
+  description:
+    'Despacho de abogados en Aguascalientes: asesoría y planeación estratégica legal. Atendemos asuntos en Aguascalientes, Guanajuato y Jalisco.',
+  // States where the firm takes cases (from the client's questionnaire).
+  areasServed: ['Aguascalientes', 'Guanajuato', 'Jalisco'],
+  // The picture shown when a link is shared (WhatsApp, Facebook, LinkedIn...).
+  // TODO(client): replace public/og-image.png with the real logo artwork (1200x630 px).
+  shareImage: {
+    path: '/og-image.png',
+    width: 1200,
+    height: 630,
+    alt: 'Delgado Gutiérrez Abogados: asesoría y planeación estratégica legal',
+  },
   year: new Date().getFullYear(),
   address,
   phone: { label: '449 804 0203', href: 'tel:+524498040203' },
