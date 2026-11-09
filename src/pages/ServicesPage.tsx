@@ -3,7 +3,7 @@ import { CallToAction } from '@/components/CallToAction'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import { Seo } from '@/components/Seo'
-import officeImage from '@/assets/office.webp'
+import { heroImages } from '@/content/images'
 import { servicesPage } from '@/content/pages/services'
 import { services } from '@/content/services'
 
@@ -13,7 +13,7 @@ export function ServicesPage() {
   return (
     <>
       <Seo title={page.seo.title} description={page.seo.description} />
-      <Hero title={page.title} lead={page.lead} image={officeImage} />
+      <Hero title={page.title} lead={page.lead} image={heroImages.inner} />
       <Section title={page.practiceAreas.title} intro={page.practiceAreas.intro}>
         <Accordion
           items={services.map((service) => ({
