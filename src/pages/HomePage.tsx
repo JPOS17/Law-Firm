@@ -5,6 +5,7 @@ import { IndexList } from '@/components/IndexList'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { Section } from '@/components/Section'
 import { Seo } from '@/components/Seo'
+import { heroImages } from '@/content/images'
 import { homePage } from '@/content/pages/home'
 import { services } from '@/content/services'
 
@@ -20,7 +21,7 @@ export function HomePage() {
         title={page.hero.title}
         lead={page.hero.lead}
         cta={page.hero.cta}
-        image="/centro-ags.webp"
+        image={heroImages.home}
       />
       <OfficeStrip />
       <div className="container section intro">

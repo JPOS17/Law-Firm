@@ -7,6 +7,12 @@ import { afterEach, vi } from 'vitest'
 window.scrollTo = vi.fn()
 Element.prototype.scrollIntoView = vi.fn()
 
+// jsdom never loads images, so the real preloader would wait for its timeout. Resolve at once.
+vi.mock('@/lib/preloadImage', () => ({
+  preloadImage: () => Promise.resolve(),
+  preloadImageWhenIdle: () => undefined,
+}))
+
 // Unmounts everything rendered by one test before the next starts,
 // so tests can't affect each other.
 afterEach(() => {
