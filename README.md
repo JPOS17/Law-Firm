@@ -74,7 +74,7 @@ In an emergency you can skip the local hooks with `git commit --no-verify`, but 
 ```
 .github/workflows/   CI workflow
 .husky/              Git hooks (pre-commit, pre-push)
-public/              Static files served as-is (favicon, etc.)
+public/              Static files served as-is (favicon, share image, robots.txt, sitemap.xml)
 src/
   app/               App root, route list, router, and page layout
   components/        Reusable UI shared across pages (e.g. Hero)
@@ -141,6 +141,37 @@ Test files live in `tests/`, mirroring `src/` (the test for `src/components/Hero
 ### Commit messages
 
 Use a short prefix that says what kind of change it is: `feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`, or `ci:`. This isn't enforced, but it keeps the history easy to scan.
+
+## SEO
+
+How the site presents itself to Google and to apps that preview shared links.
+
+| What                                                              | Where                                                                        |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Domain, default description, areas served, share image            | `src/content/site.ts`                                                        |
+| Each page's search title and description                          | `seo` in `content/pages/<page>.ts` (an article uses its title and `excerpt`) |
+| Title, description and canonical address in the page's `<head>`   | `components/Seo.tsx`, used by every page                                     |
+| Business data for Google (law firm, address, phone, areas served) | `components/StructuredData.tsx`                                              |
+| Link preview (WhatsApp, Facebook, LinkedIn, X)                    | `<meta property="og:...">` tags in `index.html`                              |
+| Share image (1200x630 px) and touch icon (180x180 px)             | `public/og-image.png`, `public/apple-touch-icon.png`                         |
+| Crawler instructions and list of pages                            | `public/robots.txt`, `public/sitemap.xml`                                    |
+
+Link-preview apps don't run JavaScript, so their tags must stay in `index.html`, and every page shows the same preview. Because `index.html`, `robots.txt` and `sitemap.xml` can't read `site.ts`, they repeat the domain. `tests/seo/` fails if they stop matching.
+
+**When you add an article:** add it to `content/posts.ts`, then add its address (with `<lastmod>` set to the post date) to `public/sitemap.xml`. The tests fail until you do.
+
+**When the logo arrives:** replace `public/og-image.png` (keep the name and the 1200x630 size) and `public/apple-touch-icon.png` (180x180), then add `logo` to `components/StructuredData.tsx`.
+
+**When the final domain is confirmed:** change `url` in `site.ts`, then the three addresses in `index.html` (`og:url`, `og:image`) and the ones in `public/robots.txt` and `public/sitemap.xml`.
+
+### Launch checklist
+
+1. Remove the `X-Robots-Tag: noindex, nofollow` header from `vercel.json`. **Until you do, Google will not index the site.**
+2. Confirm the domain (see above) and the office hours, then add `openingHoursSpecification` to `StructuredData.tsx`.
+3. Replace the placeholder text. Search engines can't rank "Área de práctica de ejemplo".
+4. Add the Google Business Profile address and social networks as `sameAs` in `StructuredData.tsx`. The firm's name, address and phone must match the profile exactly.
+5. Verify the domain in [Google Search Console](https://search.google.com/search-console) and submit `/sitemap.xml`.
+6. Test a shared link in WhatsApp and with the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (it refreshes the cached preview), and check the structured data with Google's [Rich Results Test](https://search.google.com/test/rich-results).
 
 ## Not set up yet
 

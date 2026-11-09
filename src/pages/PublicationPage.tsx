@@ -1,8 +1,8 @@
 import { Link, useParams } from 'react-router'
 import { publicationsPage } from '@/content/pages/publications'
 import { posts } from '@/content/posts'
-import { site } from '@/content/site'
 import { formatDate } from '@/lib/format'
+import { Seo } from '@/components/Seo'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
 export function PublicationPage() {
@@ -15,7 +15,7 @@ export function PublicationPage() {
 
   return (
     <>
-      <title>{`${post.title} | ${site.name}`}</title>
+      <Seo title={post.title} description={post.excerpt} />
       <article className="container section post">
         <Link to="/publicaciones" className="post__back">
           {publicationsPage.back}

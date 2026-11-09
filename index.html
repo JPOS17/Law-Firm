@@ -3,13 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delgado Gutiérrez Abogados</title>
+
+    <!-- The description and the canonical address are set per page by src/components/Seo.tsx -->
+    <title>Abogados en Aguascalientes | Delgado Gutiérrez Abogados</title>
+
+    <!-- Browser appearance and icons  -->
+    <meta name="theme-color" content="#0e1a2b" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+
+    <!-- Icon for Apple devices (iPhone, iPad, MacBook) when adding the page to the home screen -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Preload -->
+    <link rel="preload" as="image" href="/centro-ags.webp" type="image/webp" />
+
+    <!-- Link preview (WhatsApp, Facebook, LinkedIn, X...). Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Delgado Gutiérrez Abogados" />
+
+    <!-- Headline and summary under image -->
     <meta
-      name="description"
-      content="Despacho de abogados en Aguascalientes: asesoría y planeación estratégica legal."
+      property="og:title"
+      content="Delgado Gutiérrez Abogados | Asesoría y planeación estratégica legal"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href="/courthouse.webp" type="image/webp" />
+    <meta
+      property="og:description"
+      content="Despacho de abogados en Aguascalientes: asesoría y planeación estratégica legal. Atendemos asuntos en Aguascalientes, Guanajuato y Jalisco."
+    />
+
+    <!-- Address of page being shared -->
+    <meta property="og:url" content="https://delgadoabogados.com.mx/" />
+
+    <!-- Picture that will be displayed when sharing page -->
+    <meta property="og:image" content="https://delgadoabogados.com.mx/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Delgado Gutiérrez Abogados: asesoría y planeación estratégica legal"
+    />
+
+    <!-- Show image in Twitter previews -->
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>

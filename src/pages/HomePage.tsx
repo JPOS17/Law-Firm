@@ -4,23 +4,23 @@ import { OfficeStrip } from '@/components/OfficeStrip'
 import { IndexList } from '@/components/IndexList'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { Section } from '@/components/Section'
+import { Seo } from '@/components/Seo'
 import { homePage } from '@/content/pages/home'
 import { services } from '@/content/services'
-import { site } from '@/content/site'
 
 export function HomePage() {
   const page = homePage
 
   return (
     <>
-      <title>{`${page.tabTitle} | ${site.name}`}</title>
+      <Seo title={page.seo.title} description={page.seo.description} />
       <Hero
         size="large"
         eyebrow={page.hero.eyebrow}
         title={page.hero.title}
         lead={page.hero.lead}
         cta={page.hero.cta}
-        image="/courthouse.webp"
+        image="/centro-ags.webp"
       />
       <OfficeStrip />
       <div className="container section intro">
